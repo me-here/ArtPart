@@ -18,10 +18,26 @@ class HomeViewController: UIViewController {
         
         ref = Database.database().reference()
     }
+}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+extension HomeViewController: UICollectionViewDelegate {
+    
+    
+}
+
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
     }
-  
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtCollectionViewCell", for: indexPath) as! ArtCollectionViewCell
+        
+        // get cell data async and populate it
+        cell.artImage.image = #imageLiteral(resourceName: "settings")
+        cell.suggestedPrice.text = "$2.00"
+        
+        return cell
+    }
+    
 }
