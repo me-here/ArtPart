@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		433D6BC61F44C88100DFBAEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D6BC51F44C88100DFBAEA /* AppDelegate.swift */; };
-		433D6BC81F44C88100DFBAEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D6BC71F44C88100DFBAEA /* ViewController.swift */; };
+		433D6BC81F44C88100DFBAEA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D6BC71F44C88100DFBAEA /* LoginViewController.swift */; };
 		433D6BCB1F44C88100DFBAEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 433D6BC91F44C88100DFBAEA /* Main.storyboard */; };
 		433D6BCD1F44C88100DFBAEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 433D6BCC1F44C88100DFBAEA /* Assets.xcassets */; };
 		433D6BD01F44C88100DFBAEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 433D6BCE1F44C88100DFBAEA /* LaunchScreen.storyboard */; };
+		4382B4141F44C9EC00BD71E0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B4131F44C9EC00BD71E0 /* SettingsViewController.swift */; };
+		4382B4161F44C9FA00BD71E0 /* GiveArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B4151F44C9FA00BD71E0 /* GiveArtViewController.swift */; };
+		4382B4181F44CA0700BD71E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B4171F44CA0700BD71E0 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		433D6BC21F44C88100DFBAEA /* ArtPart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtPart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		433D6BC51F44C88100DFBAEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		433D6BC71F44C88100DFBAEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		433D6BC71F44C88100DFBAEA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		433D6BCA1F44C88100DFBAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		433D6BCC1F44C88100DFBAEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		433D6BCF1F44C88100DFBAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		433D6BD11F44C88100DFBAEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4382B4131F44C9EC00BD71E0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4382B4151F44C9FA00BD71E0 /* GiveArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveArtViewController.swift; sourceTree = "<group>"; };
+		4382B4171F44CA0700BD71E0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,49 @@
 		433D6BC41F44C88100DFBAEA /* ArtPart */ = {
 			isa = PBXGroup;
 			children = (
+				433D6BD71F44C8A300DFBAEA /* Model */,
+				4382B40F1F44C8C700BD71E0 /* View */,
+				4382B4111F44C8DF00BD71E0 /* Controller */,
+				4382B4121F44C8FB00BD71E0 /* Supporting Files */,
 				433D6BC51F44C88100DFBAEA /* AppDelegate.swift */,
-				433D6BC71F44C88100DFBAEA /* ViewController.swift */,
-				433D6BC91F44C88100DFBAEA /* Main.storyboard */,
-				433D6BCC1F44C88100DFBAEA /* Assets.xcassets */,
-				433D6BCE1F44C88100DFBAEA /* LaunchScreen.storyboard */,
-				433D6BD11F44C88100DFBAEA /* Info.plist */,
 			);
 			path = ArtPart;
+			sourceTree = "<group>";
+		};
+		433D6BD71F44C8A300DFBAEA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4382B40F1F44C8C700BD71E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				433D6BCE1F44C88100DFBAEA /* LaunchScreen.storyboard */,
+				433D6BC91F44C88100DFBAEA /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4382B4111F44C8DF00BD71E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				433D6BC71F44C88100DFBAEA /* LoginViewController.swift */,
+				4382B4131F44C9EC00BD71E0 /* SettingsViewController.swift */,
+				4382B4151F44C9FA00BD71E0 /* GiveArtViewController.swift */,
+				4382B4171F44CA0700BD71E0 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4382B4121F44C8FB00BD71E0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				433D6BCC1F44C88100DFBAEA /* Assets.xcassets */,
+				433D6BD11F44C88100DFBAEA /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				433D6BC81F44C88100DFBAEA /* ViewController.swift in Sources */,
+				4382B4181F44CA0700BD71E0 /* HomeViewController.swift in Sources */,
+				433D6BC81F44C88100DFBAEA /* LoginViewController.swift in Sources */,
 				433D6BC61F44C88100DFBAEA /* AppDelegate.swift in Sources */,
+				4382B4141F44C9EC00BD71E0 /* SettingsViewController.swift in Sources */,
+				4382B4161F44C9FA00BD71E0 /* GiveArtViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +319,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J82X3YWF6V;
 				INFOPLIST_FILE = ArtPart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.mihirthanekar.ArtPart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,6 +334,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J82X3YWF6V;
 				INFOPLIST_FILE = ArtPart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.mihirthanekar.ArtPart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
