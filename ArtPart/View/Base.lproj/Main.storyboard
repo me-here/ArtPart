@@ -52,7 +52,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ahD-H5-uiz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Give Art" id="VA0-0r-Beb"/>
+                    <tabBarItem key="tabBarItem" title="Give Art" image="give-love" id="VA0-0r-Beb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5X-8E-1uO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,7 +68,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="HwG-fm-4xL"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="7ld-ku-gnd"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="7ld-ku-gnd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxG-z9-ukl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -103,11 +103,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Ib0-NJ-4zN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="AHV-rO-bnc"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" id="AHV-rO-bnc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FO7-CY-EOl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1050" y="970"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="give-love" width="30" height="30"/>
+        <image name="home" width="30" height="30"/>
+        <image name="settings" width="30" height="30"/>
+    </resources>
 </document>
