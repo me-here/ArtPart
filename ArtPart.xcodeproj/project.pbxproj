@@ -17,6 +17,7 @@
 		4382B4161F44C9FA00BD71E0 /* GiveArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B4151F44C9FA00BD71E0 /* GiveArtViewController.swift */; };
 		4382B4181F44CA0700BD71E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B4171F44CA0700BD71E0 /* HomeViewController.swift */; };
 		4382B41A1F44CC6800BD71E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4382B4191F44CB5000BD71E0 /* GoogleService-Info.plist */; };
+		4382B41C1F44F38D00BD71E0 /* ArtCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B41B1F44F38D00BD71E0 /* ArtCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		4382B4151F44C9FA00BD71E0 /* GiveArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveArtViewController.swift; sourceTree = "<group>"; };
 		4382B4171F44CA0700BD71E0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4382B4191F44CB5000BD71E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4382B41B1F44F38D00BD71E0 /* ArtCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCollectionViewCell.swift; sourceTree = "<group>"; };
 		7CC24313C84F1C0F874EC659 /* Pods-ArtPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtPart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtPart/Pods-ArtPart.release.xcconfig"; sourceTree = "<group>"; };
 		C37F781C42E6BE933CE90C91 /* Pods_ArtPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C85D33278C448EB3EE07623B /* Pods-ArtPart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtPart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtPart/Pods-ArtPart.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				433D6BCE1F44C88100DFBAEA /* LaunchScreen.storyboard */,
 				433D6BC91F44C88100DFBAEA /* Main.storyboard */,
+				4382B41B1F44F38D00BD71E0 /* ArtCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			files = (
 				4382B4181F44CA0700BD71E0 /* HomeViewController.swift in Sources */,
 				433D6BC81F44C88100DFBAEA /* LoginViewController.swift in Sources */,
+				4382B41C1F44F38D00BD71E0 /* ArtCollectionViewCell.swift in Sources */,
 				433D6BC61F44C88100DFBAEA /* AppDelegate.swift in Sources */,
 				4382B4141F44C9EC00BD71E0 /* SettingsViewController.swift in Sources */,
 				4382B4161F44C9FA00BD71E0 /* GiveArtViewController.swift in Sources */,
