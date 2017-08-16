@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1C57CB3416739C235A08E7 /* Pods_ArtPart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37F781C42E6BE933CE90C91 /* Pods_ArtPart.framework */; };
 		433D6BC61F44C88100DFBAEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D6BC51F44C88100DFBAEA /* AppDelegate.swift */; };
 		433D6BC81F44C88100DFBAEA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433D6BC71F44C88100DFBAEA /* LoginViewController.swift */; };
 		433D6BCB1F44C88100DFBAEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 433D6BC91F44C88100DFBAEA /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 		4382B4141F44C9EC00BD71E0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B4131F44C9EC00BD71E0 /* SettingsViewController.swift */; };
 		4382B4161F44C9FA00BD71E0 /* GiveArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B4151F44C9FA00BD71E0 /* GiveArtViewController.swift */; };
 		4382B4181F44CA0700BD71E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B4171F44CA0700BD71E0 /* HomeViewController.swift */; };
+		4382B41A1F44CC6800BD71E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4382B4191F44CB5000BD71E0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		4382B4131F44C9EC00BD71E0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4382B4151F44C9FA00BD71E0 /* GiveArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveArtViewController.swift; sourceTree = "<group>"; };
 		4382B4171F44CA0700BD71E0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4382B4191F44CB5000BD71E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7CC24313C84F1C0F874EC659 /* Pods-ArtPart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtPart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ArtPart/Pods-ArtPart.release.xcconfig"; sourceTree = "<group>"; };
+		C37F781C42E6BE933CE90C91 /* Pods_ArtPart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ArtPart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C85D33278C448EB3EE07623B /* Pods-ArtPart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ArtPart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ArtPart/Pods-ArtPart.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F1C57CB3416739C235A08E7 /* Pods_ArtPart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +53,8 @@
 			children = (
 				433D6BC41F44C88100DFBAEA /* ArtPart */,
 				433D6BC31F44C88100DFBAEA /* Products */,
+				762260DAA7487FFE7FC19EAC /* Pods */,
+				E9CE9B7768D4539F03EABB59 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +108,28 @@
 		4382B4121F44C8FB00BD71E0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4382B4191F44CB5000BD71E0 /* GoogleService-Info.plist */,
 				433D6BCC1F44C88100DFBAEA /* Assets.xcassets */,
 				433D6BD11F44C88100DFBAEA /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		762260DAA7487FFE7FC19EAC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C85D33278C448EB3EE07623B /* Pods-ArtPart.debug.xcconfig */,
+				7CC24313C84F1C0F874EC659 /* Pods-ArtPart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E9CE9B7768D4539F03EABB59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C37F781C42E6BE933CE90C91 /* Pods_ArtPart.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,9 +139,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 433D6BD41F44C88100DFBAEA /* Build configuration list for PBXNativeTarget "ArtPart" */;
 			buildPhases = (
+				459E90B852217A5855047B17 /* [CP] Check Pods Manifest.lock */,
 				433D6BBE1F44C88100DFBAEA /* Sources */,
 				433D6BBF1F44C88100DFBAEA /* Frameworks */,
 				433D6BC01F44C88100DFBAEA /* Resources */,
+				147280D036A010D474879CA9 /* [CP] Embed Pods Frameworks */,
+				F26D461100336EBBF8B05CDF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,12 +194,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				433D6BD01F44C88100DFBAEA /* LaunchScreen.storyboard in Resources */,
+				4382B41A1F44CC6800BD71E0 /* GoogleService-Info.plist in Resources */,
 				433D6BCD1F44C88100DFBAEA /* Assets.xcassets in Resources */,
 				433D6BCB1F44C88100DFBAEA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		147280D036A010D474879CA9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArtPart/Pods-ArtPart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		459E90B852217A5855047B17 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F26D461100336EBBF8B05CDF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ArtPart/Pods-ArtPart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		433D6BBE1F44C88100DFBAEA /* Sources */ = {
@@ -315,10 +394,11 @@
 		};
 		433D6BD51F44C88100DFBAEA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C85D33278C448EB3EE07623B /* Pods-ArtPart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J82X3YWF6V;
-				INFOPLIST_FILE = ArtPart/Info.plist;
+				INFOPLIST_FILE = "ArtPart/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.mihirthanekar.ArtPart;
@@ -330,10 +410,11 @@
 		};
 		433D6BD61F44C88100DFBAEA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CC24313C84F1C0F874EC659 /* Pods-ArtPart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J82X3YWF6V;
-				INFOPLIST_FILE = ArtPart/Info.plist;
+				INFOPLIST_FILE = "ArtPart/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.mihirthanekar.ArtPart;

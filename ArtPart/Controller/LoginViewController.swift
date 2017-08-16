@@ -7,19 +7,31 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signInSilently()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+            print("Transition VC's")
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "loginSegue", sender: self)
+            }
+        }
+        
     }
-
-
 }
+
+extension LoginViewController: GIDSignInUIDelegate {
+    
+    
+}
+
 

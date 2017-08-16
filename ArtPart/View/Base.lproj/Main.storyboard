@@ -17,13 +17,30 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="noD-zy-xSR" customClass="GIDSignInButton">
+                                <rect key="frame" x="67" y="540" width="240" height="55"/>
+                                <color key="backgroundColor" red="0.0239027201" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="v0e-rV-f4F"/>
+                                    <constraint firstAttribute="height" constant="55" id="yYY-4u-42G"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="noD-zy-xSR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ibc-Yb-Irn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="noD-zy-xSR" secondAttribute="bottom" constant="72" id="qIA-Rq-ALg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="XgL-8o-YGh" kind="show" identifier="loginSegue" id="yWx-7P-tPU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-63" y="157"/>
+            <point key="canvasLocation" x="-63.200000000000003" y="156.97151424287858"/>
         </scene>
         <!--Give Art-->
         <scene sceneID="k4U-If-R77">
