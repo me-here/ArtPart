@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     
     var numberOfArtWorks: Int  = 0
     var artworks: [[String: AnyObject]] = [[:]]
+    var prices = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,13 @@ class HomeViewController: UIViewController {
         url.observe(.value) { snapshot in
             self.numberOfArtWorks = Int(snapshot.childrenCount)
             for child in snapshot.children {
+                guard let price = (child as? DataSnapshot)?.childSnapshot(forPath: "desiredPrice").value as? Double else {
+                    // analytics
+                    continue
+                }
+                let formattedPrice = String(format: "%.2f", price)
+                self.prices.append(formattedPrice)  // If zero, something went wrong.
+                
                 let artworkSnapshot = (child as? DataSnapshot)?.childSnapshot(forPath: "PicturesOfArtWork")
                 guard let artworkURLS = artworkSnapshot?.value as? [String: AnyObject] else {
                     continue
@@ -41,11 +49,11 @@ class HomeViewController: UIViewController {
                 
             }*/
             
-            DispatchQueue.main.async {
-                
-            }
         }
     }
+    
+    
+    
 }
 
 extension HomeViewController: UICollectionViewDelegate {
@@ -64,9 +72,22 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtCollectionViewCell", for: indexPath) as! ArtCollectionViewCell
         
+        
+        let photURL = self.artworks[indexPath.row + 1]["pic1"]  // Firebase starts @ 1
+        let photoURL = photURL as! String
+        ArtRequests.requestWith(requestType: "GET", requestURL: photoURL, addValues: [:], httpBody: nil, completionHandler: { data, error in
+            guard error == nil else {
+                print("ERROR")
+                return
+            }
+            DispatchQueue.main.async {
+                cell.artImage.image = UIImage(data: data!)
+            }
+        })
+        
         // get cell data async and populate it
-        cell.artImage.image = #imageLiteral(resourceName: "settings")
-        cell.suggestedPrice.text = "$2.00"
+        //cell.artImage.image = #imageLiteral(resourceName: "settings")
+        cell.suggestedPrice.text = "$\(prices[indexPath.row])"
         
         return cell
     }
