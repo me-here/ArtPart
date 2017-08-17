@@ -16,7 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //UIApplication.shared.delegate?.window??.tintColor = UIColor(red: 242.0/255.0, green: 101.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        //UINavigationBar.appearance().barStyle = UIBarStyle.black
+        //UINavigationBar.appearance().backgroundColor = UIColor.red
+        //UINavigationBar.appearance().setBackgroundImage(theme.navigationBackgroundImage, forBarMetrics: .Default)
+        
         FirebaseApp.configure()
         
         // Sign in config
