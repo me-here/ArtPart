@@ -162,7 +162,9 @@
                         <viewLayoutGuide key="safeArea" id="HwG-fm-4xL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="7ld-ku-gnd"/>
-                    <navigationItem key="navigationItem" title="Find Art" id="XnI-3p-cUN"/>
+                    <navigationItem key="navigationItem" title="Find Art" id="XnI-3p-cUN">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="shopping-cart" id="iBi-l0-bzu"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="artCollectionView" destination="cYk-Nr-pfN" id="drM-Gp-ILk"/>
                         <segue destination="Fx5-na-tm5" kind="show" identifier="viewArt" id="7eo-ZX-7gG"/>
@@ -328,5 +330,6 @@
         <image name="give-love" width="30" height="30"/>
         <image name="home" width="30" height="30"/>
         <image name="settings" width="30" height="30"/>
+        <image name="shopping-cart" width="30" height="30"/>
     </resources>
 </document>
