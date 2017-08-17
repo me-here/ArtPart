@@ -135,6 +135,9 @@
                         <viewLayoutGuide key="safeArea" id="HwG-fm-4xL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="7ld-ku-gnd"/>
+                    <connections>
+                        <outlet property="artCollectionView" destination="cYk-Nr-pfN" id="drM-Gp-ILk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxG-z9-ukl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

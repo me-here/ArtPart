@@ -12,22 +12,53 @@ import FirebaseDatabase
 
 class HomeViewController: UIViewController {
     var ref: DatabaseReference!
+    @IBOutlet weak var artCollectionView: UICollectionView!
+    
+    var numberOfArtWorks: Int  = 0
+    var artworks: [[String: AnyObject]] = [[:]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ref = Database.database().reference()
+        
+        let url = ref.child("ArtPieces")
+        url.observe(.value) { snapshot in
+            self.numberOfArtWorks = Int(snapshot.childrenCount)
+            for child in snapshot.children {
+                let artworkSnapshot = (child as? DataSnapshot)?.childSnapshot(forPath: "PicturesOfArtWork")
+                guard let artworkURLS = artworkSnapshot?.value as? [String: AnyObject] else {
+                    continue
+                }
+                print(artworkURLS["pic1"] ?? "")
+                self.artworks.append(artworkURLS)
+                DispatchQueue.main.async {
+                    self.artCollectionView.reloadData()
+                }
+            }/*
+            if !self.artworks.isEmpty {
+                //  get photos
+                
+            }*/
+            
+            DispatchQueue.main.async {
+                
+            }
+        }
     }
 }
 
 extension HomeViewController: UICollectionViewDelegate {
-    
+    /*func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        <#code#>
+    }*/
     
 }
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        print(self.numberOfArtWorks)
+        return self.numberOfArtWorks
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
