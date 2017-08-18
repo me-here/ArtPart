@@ -40,11 +40,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         guard error == nil else {
+            // Analytics
             print("Sign in failure.")
             return
         }
         
         print(user.profile.name)
+        
+        guard let authentication = user.authentication else {return}
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) {  (usr, err) in
+            guard err == nil else {
+                print("Firebase Sign in failure")
+                print(err?.localizedDescription ?? "")
+                return
+            }
+            // Yay sign in successful
+        }
     }
     
 }
