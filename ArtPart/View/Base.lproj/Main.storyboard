@@ -183,28 +183,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="Z6k-N4-ee6">
-                                <rect key="frame" x="16" y="80" width="343" height="343"/>
+                                <rect key="frame" x="138" y="80" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Z6k-N4-ee6" secondAttribute="height" multiplier="1:1" id="6Tl-JS-Hbu"/>
+                                    <constraint firstAttribute="width" constant="100" id="PFV-B4-Myw"/>
+                                    <constraint firstAttribute="height" constant="100" id="gps-L0-J77"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cKe-hi-ZRo">
-                                <rect key="frame" x="67" y="463" width="240" height="128"/>
+                                <rect key="frame" x="67" y="220" width="240" height="97"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="ACE-4w-PQZ"/>
+                                    <constraint firstAttribute="height" constant="97" id="ACE-4w-PQZ"/>
                                     <constraint firstAttribute="width" constant="240" id="H7L-ls-q43"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Le-XW-Wbi" userLabel="PayView">
+                                <rect key="frame" x="67" y="538" width="240" height="60"/>
+                                <color key="backgroundColor" red="0.3485610878" green="0.97680455450000003" blue="0.62827570929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="DyO-bP-Mvp"/>
+                                    <constraint firstAttribute="width" constant="240" id="e7V-8f-tu9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Z6k-N4-ee6" firstAttribute="centerX" secondItem="LpJ-rU-q5H" secondAttribute="centerX" id="7Ts-Jl-ej6"/>
                             <constraint firstItem="cKe-hi-ZRo" firstAttribute="centerX" secondItem="LpJ-rU-q5H" secondAttribute="centerX" id="9pD-EV-CDb"/>
-                            <constraint firstItem="Z6k-N4-ee6" firstAttribute="leading" secondItem="LpJ-rU-q5H" secondAttribute="leading" constant="16" id="BzB-ea-UW6"/>
-                            <constraint firstItem="LpJ-rU-q5H" firstAttribute="trailing" secondItem="Z6k-N4-ee6" secondAttribute="trailing" constant="16" id="MPm-bQ-H75"/>
+                            <constraint firstItem="3Le-XW-Wbi" firstAttribute="centerX" secondItem="LpJ-rU-q5H" secondAttribute="centerX" id="M4c-gk-qMj"/>
+                            <constraint firstItem="LpJ-rU-q5H" firstAttribute="bottom" secondItem="3Le-XW-Wbi" secondAttribute="bottom" constant="20" id="NHg-M7-9mT"/>
                             <constraint firstItem="Z6k-N4-ee6" firstAttribute="top" secondItem="LpJ-rU-q5H" secondAttribute="top" constant="16" id="v2v-p7-beT"/>
                             <constraint firstItem="cKe-hi-ZRo" firstAttribute="top" secondItem="Z6k-N4-ee6" secondAttribute="bottom" constant="40" id="wI8-fC-Yl8"/>
                         </constraints>
@@ -214,11 +224,12 @@
                     <connections>
                         <outlet property="artDescription" destination="cKe-hi-ZRo" id="7eY-sD-b7T"/>
                         <outlet property="artImage" destination="Z6k-N4-ee6" id="ped-1J-qKO"/>
+                        <outlet property="payView" destination="3Le-XW-Wbi" id="1DN-0L-Lcp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1h7-EQ-lFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3441" y="-215"/>
+            <point key="canvasLocation" x="3440.8000000000002" y="-215.44227886056973"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Wmm-gZ-w3Z">
@@ -254,7 +265,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NZD-L2-7d8" id="yhg-8n-Aru">
-                                            <rect key="frame" x="0.0" y="0.0" width="308" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="308" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms &amp; Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2n-Eb-FIs">
@@ -275,7 +286,7 @@
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CaN-uj-z5c" id="csm-Qb-sjl">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8l-RO-UhO">
@@ -300,7 +311,7 @@
                                         <rect key="frame" x="0.0" y="144" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z5G-8f-clB" id="sFi-OQ-Q9G">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPW-xH-s8h">
