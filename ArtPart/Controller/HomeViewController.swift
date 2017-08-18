@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
     var numberOfArtWorks: Int  = 0
     var artworks: [[String: AnyObject]] = [[:]]
     var prices = [String]()
+    var descriptions = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +28,24 @@ class HomeViewController: UIViewController {
         url.observe(.value) { snapshot in
             self.numberOfArtWorks = Int(snapshot.childrenCount)
             for child in snapshot.children {
-                guard let price = (child as? DataSnapshot)?.childSnapshot(forPath: "desiredPrice").value as? Double else {
+                let childSnapshot = child as? DataSnapshot
+                let childDict = childSnapshot?.value as? [String: AnyObject]
+                
+                guard let price = childDict?["desiredPrice"] as? Double else {
                     // analytics
                     continue
                 }
+                
                 let formattedPrice = String(format: "%.2f", price)
                 self.prices.append(formattedPrice)  // If zero, something went wrong.
+                
+                guard let description = childDict?["description"] as? String else {
+                    // analytics
+                    continue
+                }
+                
+                //print(description)
+                self.descriptions.append(description)
                 
                 let artworkSnapshot = (child as? DataSnapshot)?.childSnapshot(forPath: "PicturesOfArtWork")
                 guard let artworkURLS = artworkSnapshot?.value as? [String: AnyObject] else {
@@ -53,12 +66,29 @@ class HomeViewController: UIViewController {
     }
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewArt" {
+            guard let firstSelectedRow = artCollectionView.indexPathsForSelectedItems?.first?.row else {
+                return
+            }
+            let detailVC = segue.destination as! ArtDetailViewController
+            
+            detailVC.desc = descriptions[firstSelectedRow]
+            let cell = artCollectionView.cellForItem(at: (artCollectionView.indexPathsForSelectedItems?.first)!) as! ArtCollectionViewCell
+            detailVC.image = cell.artImage.image
+            DispatchQueue.main.async {
+                self.artCollectionView.deselectItem(at: (self.artCollectionView.indexPathsForSelectedItems?.first)!, animated: true)
+            }
+        }
+    }
     
 }
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "viewArt", sender: self)
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "viewArt", sender: self)
+        }
     }
     
 }
