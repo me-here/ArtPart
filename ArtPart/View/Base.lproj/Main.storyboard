@@ -89,7 +89,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GBD-Xs-KxB">
                                 <rect key="frame" x="0.0" y="160" width="375" height="132"/>
@@ -112,13 +112,31 @@
                                     <outlet property="delegate" destination="7wl-ic-es9" id="OgB-oO-7hn"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Short Description of your artwork" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q7R-gM-i2K">
+                                <rect key="frame" x="62.5" y="317" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Meu-6g-0LG"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGM-Dq-gVe">
+                                <rect key="frame" x="162.5" y="557" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Q7R-gM-i2K" firstAttribute="top" secondItem="GBD-Xs-KxB" secondAttribute="bottom" constant="25" id="31x-dY-ixW"/>
                             <constraint firstItem="GBD-Xs-KxB" firstAttribute="centerX" secondItem="ahD-H5-uiz" secondAttribute="centerX" id="8tf-oK-qzr"/>
+                            <constraint firstItem="ahD-H5-uiz" firstAttribute="bottom" secondItem="cGM-Dq-gVe" secondAttribute="bottom" constant="31" id="F5f-Cg-1f3"/>
                             <constraint firstItem="GBD-Xs-KxB" firstAttribute="width" secondItem="rR3-R1-wdk" secondAttribute="width" id="QwV-Sz-by9"/>
                             <constraint firstItem="XXx-d0-VND" firstAttribute="top" secondItem="ahD-H5-uiz" secondAttribute="top" constant="35" id="TDC-Id-8dO"/>
                             <constraint firstItem="XXx-d0-VND" firstAttribute="centerX" secondItem="ahD-H5-uiz" secondAttribute="centerX" id="VAK-Xc-HB6"/>
+                            <constraint firstItem="Q7R-gM-i2K" firstAttribute="centerX" secondItem="rR3-R1-wdk" secondAttribute="centerX" id="XDm-wH-mKg"/>
+                            <constraint firstItem="cGM-Dq-gVe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Q7R-gM-i2K" secondAttribute="bottom" id="hQE-rQ-TSR"/>
+                            <constraint firstItem="cGM-Dq-gVe" firstAttribute="centerX" secondItem="ahD-H5-uiz" secondAttribute="centerX" id="i3h-or-s7f"/>
                             <constraint firstItem="GBD-Xs-KxB" firstAttribute="top" secondItem="XXx-d0-VND" secondAttribute="bottom" constant="31" id="ixO-4E-e0o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ahD-H5-uiz"/>
@@ -126,6 +144,8 @@
                     <tabBarItem key="tabBarItem" title="Give Art" image="give-love" id="VA0-0r-Beb"/>
                     <navigationItem key="navigationItem" title="Share your Art" id="lto-VW-n9a"/>
                     <connections>
+                        <outlet property="descriptionField" destination="Q7R-gM-i2K" id="fYM-Mc-ECw"/>
+                        <outlet property="nameField" destination="XXx-d0-VND" id="zVM-IH-U8l"/>
                         <outlet property="tableView" destination="GBD-Xs-KxB" id="ii1-Xr-wFS"/>
                     </connections>
                 </viewController>

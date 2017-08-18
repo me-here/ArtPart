@@ -12,6 +12,8 @@ class GiveArtViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var selectedImages = [UIImage]()
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var descriptionField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,8 @@ class GiveArtViewController: UIViewController {
                 selectedImages.append(#imageLiteral(resourceName: "placeholder-image"))
             }
         }
+        nameField.delegate = self
+        descriptionField.delegate = self
     }
 
 
@@ -70,4 +74,15 @@ extension GiveArtViewController: UIImagePickerControllerDelegate, UINavigationCo
         }
     }
     
+}
+
+extension GiveArtViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
