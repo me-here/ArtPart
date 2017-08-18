@@ -46,12 +46,19 @@ class ArtDetailViewController: UIViewController {
         } else {
             // Fallback on earlier versions
         }
+        
+        
     }
     
+    
+}
+
+
+extension ArtDetailViewController: PKPaymentAuthorizationViewControllerDelegate {
     @objc func applePayTriggered() {
         let fare = PKPaymentSummaryItem(label: "Minimum Fare", amount: NSDecimalNumber(string: "9.99"), type: .final)
         let tax = PKPaymentSummaryItem(label: "Tax", amount: NSDecimalNumber(string: "1.00"), type: .final)
-        let total = PKPaymentSummaryItem(label: "Emporium", amount: NSDecimalNumber(string: "10.99"), type: .pending)
+        let total = PKPaymentSummaryItem(label: "ArtPart", amount: NSDecimalNumber(string: "10.99"), type: .pending)
         
         let paymentSummaryItems = [fare, tax, total]
         
@@ -76,10 +83,7 @@ class ArtDetailViewController: UIViewController {
             self.present(vc, animated: true, completion: nil)
         }
     }
-}
-
-
-extension ArtDetailViewController: PKPaymentAuthorizationViewControllerDelegate {
+    
     func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
         DispatchQueue.main.async {
             controller.dismiss(animated: true, completion: nil)
