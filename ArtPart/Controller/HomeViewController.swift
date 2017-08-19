@@ -13,6 +13,7 @@ import FirebaseDatabase
 class HomeViewController: UIViewController {
     var ref: DatabaseReference!
     @IBOutlet weak var artCollectionView: UICollectionView!
+    @IBOutlet weak var artFlowLayout: UICollectionViewFlowLayout!
     
     var numberOfArtWorks: Int  = 0
     var artworks: [[String: AnyObject]] = [[:]]
@@ -21,6 +22,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupFlowLayout(flowLayout: artFlowLayout, numberOfHorItems: 3, numberOfVertItems: 5, spacing: 3.0)
         
         ref = Database.database().reference()
         
@@ -65,6 +68,14 @@ class HomeViewController: UIViewController {
         }
     }
     
+    func setupFlowLayout(flowLayout: UICollectionViewFlowLayout, numberOfHorItems: CGFloat, numberOfVertItems: CGFloat, spacing: CGFloat) {
+        artFlowLayout.minimumInteritemSpacing = spacing
+        artFlowLayout.minimumLineSpacing = spacing
+        
+        let widthSize = (view.frame.width - 2 * artFlowLayout.minimumInteritemSpacing) / numberOfHorItems
+        let heightSize = (view.frame.height - 2 * artFlowLayout.minimumLineSpacing) / numberOfVertItems   // not necessary unless you need it
+        artFlowLayout.itemSize = CGSize(width: widthSize, height: heightSize)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewArt" {

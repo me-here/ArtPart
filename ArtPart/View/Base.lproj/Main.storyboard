@@ -300,6 +300,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="artCollectionView" destination="cYk-Nr-pfN" id="drM-Gp-ILk"/>
+                        <outlet property="artFlowLayout" destination="6vK-35-9gG" id="Hgn-La-LwS"/>
                         <segue destination="Fx5-na-tm5" kind="show" identifier="viewArt" id="7eo-ZX-7gG"/>
                     </connections>
                 </viewController>
