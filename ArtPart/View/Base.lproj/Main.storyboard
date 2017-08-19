@@ -296,7 +296,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="7ld-ku-gnd"/>
                     <navigationItem key="navigationItem" title="Find Art" id="XnI-3p-cUN">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="shopping-cart" id="iBi-l0-bzu"/>
+                        <barButtonItem key="rightBarButtonItem" image="shopping-cart" id="iBi-l0-bzu"/>
                     </navigationItem>
                     <connections>
                         <outlet property="artCollectionView" destination="cYk-Nr-pfN" id="drM-Gp-ILk"/>
