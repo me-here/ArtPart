@@ -7,26 +7,84 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
+import FirebaseStorage
 
 class GiveArtViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    
-    var selectedImages = [UIImage]()
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
+    @IBOutlet weak var priceField: UITextField!
+    
+    var selectedImages = [UIImage]()
+    var imageURLS = [String]()
+    var key = ""
+    var needsNewKey: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         if selectedImages.isEmpty {
-            for _ in 0...tableView.numberOfRows(inSection: 0) {
+            for _ in 0...tableView.numberOfRows(inSection: 0) - 1 {
                 selectedImages.append(#imageLiteral(resourceName: "placeholder-image"))
             }
         }
         nameField.delegate = self
         descriptionField.delegate = self
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if needsNewKey {
+            key = "\(Int(arc4random_uniform(100000000)))"   // They most likely won't have 100,000,000 pieces of art and the possibility of a conflict is infinitesemaly low...
+            needsNewKey = false
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        needsNewKey = true
+    }
 
-
+    @IBAction func submitArtwork(_ sender: Any) {
+        // checks
+        guard let price = Int(priceField.text ?? ""),
+            let uid = Auth.auth().currentUser?.uid,
+            let desc = descriptionField.text else {
+            // Alert
+            return
+        }
+        
+        for image in selectedImages {
+            if image == #imageLiteral(resourceName: "placeholder-image") {
+                // Alert
+                return
+            }
+        }
+        
+        
+        
+        // database POST
+        let root = Database.database().reference()
+        //let key = root.child("ArtPieces").childByAutoId().key
+        
+        let images = ["pic1": imageURLS[0],
+                      "pic2": imageURLS[1],
+                      "pic3": imageURLS[2]
+                      ]
+        
+        let post = [
+            "Artist": uid,
+            "desiredPrice": price,
+            "PicturesOfArtWork": images,
+            "description": desc
+            ] as [String : Any]
+        let childUpdates = ["ArtPieces/\(key)": post]
+        root.updateChildValues(childUpdates)
+        // Add images to Storage
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "success", sender: self)
+        }
+    }
+    
 }
 
 extension GiveArtViewController: UITableViewDelegate {
@@ -63,13 +121,50 @@ extension GiveArtViewController: UITableViewDataSource {
 
 extension GiveArtViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        guard let selectedIndexPath = tableView.indexPathForSelectedRow, let selectedRow = Optional(selectedIndexPath.row) else {
+        guard let uid = Auth.auth().currentUser?.uid, !uid.isEmpty,
+            let selectedIndexPath = tableView.indexPathForSelectedRow,
+            let selectedRow = Optional(selectedIndexPath.row),
+            let image = info[UIImagePickerControllerOriginalImage] as? UIImage,
+            let imageData: Data = UIImageJPEGRepresentation(image, 0.4) else {
             return
         }
-        selectedImages[selectedRow] = (info[UIImagePickerControllerOriginalImage] as? UIImage)!
+        
+        selectedImages[selectedRow] = image
+        
+        // Firebase Storage --> Store images
+        let storageRoot = Storage.storage().reference()
+        let currentUserImages = storageRoot.child("images/\(Auth.auth().currentUser?.uid ?? "")/\(key)/\(selectedRow).jpg")
+        
+        currentUserImages.putData(imageData, metadata: nil, completion: { (metadata, error) in
+            guard let metadata = metadata,
+                let downloadString = metadata.downloadURL()?.absoluteString else {
+                // analytics
+                return
+            }
+            
+            self.imageURLS.append(downloadString)
+        })
+        
+        // End of Storage block
+        
+        needsNewKey = false
+        
         DispatchQueue.main.async {
             self.tableView.deselectRow(at: selectedIndexPath, animated: true)
             self.tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+            picker.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        guard let selectedIndexPath = self.tableView.indexPathForSelectedRow else {
+            return
+        }
+        
+        needsNewKey = false
+        
+        DispatchQueue.main.async {
+            self.tableView.deselectRow(at: selectedIndexPath, animated: true)
             picker.dismiss(animated: true, completion: nil)
         }
     }

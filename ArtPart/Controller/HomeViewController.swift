@@ -104,7 +104,10 @@ extension HomeViewController: UICollectionViewDataSource {
         
         
         let photURL = self.artworks[indexPath.row + 1]["pic1"]  // Firebase starts @ 1
-        let photoURL = photURL as! String
+        guard let photoURL = photURL as? String else {
+            // Analytics ...
+            return cell
+        }
         ArtRequests.requestWith(requestType: "GET", requestURL: photoURL, addValues: [:], httpBody: nil, completionHandler: { data, error in
             guard error == nil else {
                 print("ERROR")
