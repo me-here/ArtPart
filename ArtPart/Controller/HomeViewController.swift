@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.registerForPreviewing(with: self, sourceView: artCollectionView)
+        self.registerForPreviewing(with: self, sourceView: artCollectionView)   // Registration & Automatic unregistration
         setupFlowLayout(flowLayout: artFlowLayout, numberOfHorItems: 3, numberOfVertItems: 5, spacing: 3.0)
         
         ref = Database.database().reference()
@@ -142,9 +142,13 @@ extension HomeViewController: UIViewControllerPreviewingDelegate {
         artDetail.desc = descriptions[indexPath.row]
         artDetail.image = cellAtPath.artImage.image
         
+        
+        
         let cellRect = cellAtPath.frame
         let sourceRect = previewingContext.sourceView.convert(cellRect, to: artCollectionView)
         previewingContext.sourceRect = sourceRect
+        
+        //previewing
         
         return artDetail
     }
@@ -152,6 +156,4 @@ extension HomeViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         show(viewControllerToCommit, sender: self)
     }
-    
-    
 }

@@ -50,7 +50,13 @@ class ArtDetailViewController: UIViewController {
         
     }
     
-    
+    override var previewActionItems: [UIPreviewActionItem] {
+        let buyAction = UIPreviewAction(title: "Do something.", style: .default, handler: {
+            (action, vc) in
+            print("Clicked 'Do something.'")
+        })
+        return [buyAction]
+    }
 }
 
 
