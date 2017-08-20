@@ -22,7 +22,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.registerForPreviewing(with: self, sourceView: artCollectionView)
         setupFlowLayout(flowLayout: artFlowLayout, numberOfHorItems: 3, numberOfVertItems: 5, spacing: 3.0)
         
         ref = Database.database().reference()
@@ -59,11 +59,7 @@ class HomeViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.artCollectionView.reloadData()
                 }
-            }/*
-            if !self.artworks.isEmpty {
-                //  get photos
-                
-            }*/
+            }
             
         }
     }
@@ -130,10 +126,32 @@ extension HomeViewController: UICollectionViewDataSource {
         })
         
         // get cell data async and populate it
-        //cell.artImage.image = #imageLiteral(resourceName: "settings")
         cell.suggestedPrice.text = "$\(prices[indexPath.row])"
         
         return cell
     }
+    
+}
+
+extension HomeViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = artCollectionView.indexPathForItem(at: location) else {return nil}
+        let cellAtPath = artCollectionView.cellForItem(at: indexPath) as! ArtCollectionViewCell
+        
+        let artDetail = self.storyboard?.instantiateViewController(withIdentifier: "ArtDetailViewController") as! ArtDetailViewController
+        artDetail.desc = descriptions[indexPath.row]
+        artDetail.image = cellAtPath.artImage.image
+        
+        let cellRect = cellAtPath.frame
+        let sourceRect = previewingContext.sourceView.convert(cellRect, to: artCollectionView)
+        previewingContext.sourceRect = sourceRect
+        
+        return artDetail
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: self)
+    }
+    
     
 }
