@@ -54,7 +54,7 @@ class HomeViewController: UIViewController {
                 guard let artworkURLS = artworkSnapshot?.value as? [String: AnyObject] else {
                     continue
                 }
-                print(artworkURLS["pic1"] ?? "")
+                //print(artworkURLS["pic1"] ?? "")
                 self.artworks.append(artworkURLS)
                 DispatchQueue.main.async {
                     self.artCollectionView.reloadData()
@@ -102,7 +102,7 @@ extension HomeViewController: UICollectionViewDelegate {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(self.numberOfArtWorks)
+        //print(self.numberOfArtWorks)
         return self.numberOfArtWorks
     }
     

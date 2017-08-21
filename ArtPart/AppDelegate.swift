@@ -45,7 +45,7 @@ extension AppDelegate: GIDSignInDelegate {
             return
         }
         
-        print(user.profile.name)
+        //print(user.profile.name)
         
         guard let authentication = user.authentication else {return}
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
