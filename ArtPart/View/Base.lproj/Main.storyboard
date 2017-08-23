@@ -24,10 +24,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-wA-84j">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-wA-84j">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="e0l-z8-PFw">
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="e0l-z8-PFw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
@@ -44,7 +43,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ddd-wA-84j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6aT-dJ-rrV"/>
+                            <constraint firstItem="ddd-wA-84j" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9Qf-Sd-Ze2"/>
+                            <constraint firstItem="ddd-wA-84j" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fgg-vQ-Emu"/>
                             <constraint firstItem="noD-zy-xSR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ibc-Yb-Irn"/>
+                            <constraint firstItem="ddd-wA-84j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Vm0-AB-wJJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="noD-zy-xSR" secondAttribute="bottom" constant="72" id="qIA-Rq-ALg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -317,7 +320,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="Z6k-N4-ee6">
-                                <rect key="frame" x="138" y="80" width="100" height="100"/>
+                                <rect key="frame" x="138" y="84" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Z6k-N4-ee6" secondAttribute="height" multiplier="1:1" id="6Tl-JS-Hbu"/>
                                     <constraint firstAttribute="width" constant="100" id="PFV-B4-Myw"/>
@@ -325,7 +328,7 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cKe-hi-ZRo">
-                                <rect key="frame" x="67" y="220" width="240" height="97"/>
+                                <rect key="frame" x="67" y="224" width="240" height="97"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="ACE-4w-PQZ"/>
