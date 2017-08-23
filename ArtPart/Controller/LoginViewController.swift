@@ -13,7 +13,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //ArtRequests.sendEmail(to: "mihirthanekar@gmail.com", subject: "Hi!", text: "Some time no see! We should meet up soon.")
         
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signInSilently()
