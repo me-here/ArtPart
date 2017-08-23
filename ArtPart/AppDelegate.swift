@@ -16,10 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        //UIApplication.shared.delegate?.window??.tintColor = UIColor(red: 242.0/255.0, green: 101.0/255.0, blue: 34.0/255.0, alpha: 1.0)
-        //UINavigationBar.appearance().barStyle = UIBarStyle.black
-        //UINavigationBar.appearance().backgroundColor = UIColor.red
-        //UINavigationBar.appearance().setBackgroundImage(theme.navigationBackgroundImage, forBarMetrics: .Default)
+        UIApplication.shared.delegate?.window??.tintColor = UIColor(red: 121/255, green: 196/255, blue: 245/255.0, alpha: 1.0)
+        UINavigationBar.appearance().barStyle = UIBarStyle.black
+        UINavigationBar.appearance().backgroundColor = UIColor.red
+        UITabBar.appearance().barStyle = UIBarStyle.black
+        
+        //UIApplication.shared.delegate?.window??.
+        
         
         FirebaseApp.configure()
         
@@ -45,8 +48,6 @@ extension AppDelegate: GIDSignInDelegate {
             return
         }
         
-        //print(user.profile.name)
-        
         guard let authentication = user.authentication else {return}
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
         
@@ -56,6 +57,7 @@ extension AppDelegate: GIDSignInDelegate {
                 print(err?.localizedDescription ?? "")
                 return
             }
+            
             // Yay sign in successful
         }
     }

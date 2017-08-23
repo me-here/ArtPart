@@ -47,14 +47,13 @@ class HomeViewController: UIViewController {
                     continue
                 }
                 
-                //print(description)
                 self.descriptions.append(description)
                 
                 let artworkSnapshot = (child as? DataSnapshot)?.childSnapshot(forPath: "PicturesOfArtWork")
                 guard let artworkURLS = artworkSnapshot?.value as? [String: AnyObject] else {
                     continue
                 }
-                //print(artworkURLS["pic1"] ?? "")
+                
                 self.artworks.append(artworkURLS)
                 DispatchQueue.main.async {
                     self.artCollectionView.reloadData()
@@ -102,7 +101,6 @@ extension HomeViewController: UICollectionViewDelegate {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //print(self.numberOfArtWorks)
         return self.numberOfArtWorks
     }
     
