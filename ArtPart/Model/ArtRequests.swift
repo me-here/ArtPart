@@ -16,17 +16,22 @@ class ArtRequests {
         static let sendURL = "https://api.mailjet.com/v3/send"
     }
     
-    static func requestWith(requestType: String, requestURL: String, addValues: [String: String], httpBody: Data?, completionHandler: @escaping (Data?, Error?)-> Void) {
+    enum RequestType: String {
+        case get = "GET"
+        case post = "POST"
+        case put = "PUT"
+    }
+    
+    static func requestWith(requestType: RequestType, requestURL: String, addValues: [String: String], httpBody: Data?, completionHandler: @escaping (Data?, Error?)-> Void) {
         
         let baseURL = URL(string: requestURL)!
         var request = URLRequest(url: baseURL)
-        request.httpMethod = requestType
+        request.httpMethod = requestType.rawValue
         for value in addValues {
             request.addValue(value.value, forHTTPHeaderField: value.key)
         }
         
-        request.httpBody = httpBody//?.data(using: String.Encoding.utf8)
-        //request.timeoutInterval = 10
+        request.httpBody = httpBody
         
         let task = URLSession.shared.dataTask(with: request, completionHandler: {(data, response, error) in
             guard error == nil/*, let bytesData = data*/ else {
@@ -64,7 +69,7 @@ class ArtRequests {
         }
         
         
-        requestWith(requestType: "POST", requestURL: MailJetEmail.sendURL, addValues: vals, httpBody: httpBody, completionHandler: {
+        requestWith(requestType: .post, requestURL: MailJetEmail.sendURL, addValues: vals, httpBody: httpBody, completionHandler: {
             (data, error) in
             guard error == nil else {
                 // Analytics ...

@@ -115,7 +115,8 @@ extension HomeViewController: UICollectionViewDataSource {
             // Analytics ...
             return cell
         }
-        ArtRequests.requestWith(requestType: "GET", requestURL: photoURL, addValues: [:], httpBody: nil, completionHandler: { data, error in
+        
+        ArtRequests.requestWith(requestType: .get, requestURL: photoURL, addValues: [:], httpBody: nil, completionHandler: { data, error in
             guard error == nil else {
                 print("ERROR")
                 return
