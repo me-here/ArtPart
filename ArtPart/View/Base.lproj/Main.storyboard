@@ -66,7 +66,7 @@
                 <navigationController id="5A0-p2-iDl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="5vW-YQ-4FN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mSO-WK-5tz">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -86,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Child's First &amp; Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XXx-d0-VND">
-                                <rect key="frame" x="62.5" y="103" width="250" height="30"/>
+                                <rect key="frame" x="62.5" y="99" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="vlw-gA-771"/>
                                 </constraints>
@@ -95,7 +95,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GBD-Xs-KxB">
-                                <rect key="frame" x="0.0" y="164" width="375" height="132"/>
+                                <rect key="frame" x="0.0" y="160" width="375" height="132"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="wSi-yf-fuy"/>
@@ -116,7 +116,7 @@
                                 </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Short Description of your artwork" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q7R-gM-i2K">
-                                <rect key="frame" x="62.5" y="321" width="250" height="30"/>
+                                <rect key="frame" x="62.5" y="317" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Meu-6g-0LG"/>
                                 </constraints>
@@ -132,7 +132,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Desired Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="omy-N9-c2l">
-                                <rect key="frame" x="62" y="359" width="250" height="30"/>
+                                <rect key="frame" x="62" y="355" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="Zv7-Gb-gqg"/>
                                 </constraints>
@@ -202,7 +202,7 @@
                 <navigationController id="9jZ-rJ-dBU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Give Art" image="give-love" id="dF7-z9-1x3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wim-17-z5p">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -219,7 +219,7 @@
                 <navigationController id="qJ4-Sp-cQf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="wxN-MB-a2U"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qs7-3c-38V">
-                        <rect key="frame" x="0.0" y="20" width="375" height="48"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -239,7 +239,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cYk-Nr-pfN">
-                                <rect key="frame" x="0.0" y="68" width="375" height="550"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6vK-35-9gG">
                                     <size key="itemSize" width="131" height="139"/>
@@ -298,9 +298,7 @@
                         <viewLayoutGuide key="safeArea" id="HwG-fm-4xL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="7ld-ku-gnd"/>
-                    <navigationItem key="navigationItem" title="Find Art" id="XnI-3p-cUN">
-                        <barButtonItem key="rightBarButtonItem" image="shopping-cart" id="iBi-l0-bzu"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Find Art" id="XnI-3p-cUN"/>
                     <connections>
                         <outlet property="artCollectionView" destination="cYk-Nr-pfN" id="drM-Gp-ILk"/>
                         <outlet property="artFlowLayout" destination="6vK-35-9gG" id="Hgn-La-LwS"/>
@@ -320,7 +318,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="Z6k-N4-ee6">
-                                <rect key="frame" x="138" y="84" width="100" height="100"/>
+                                <rect key="frame" x="138" y="80" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Z6k-N4-ee6" secondAttribute="height" multiplier="1:1" id="6Tl-JS-Hbu"/>
                                     <constraint firstAttribute="width" constant="100" id="PFV-B4-Myw"/>
@@ -328,7 +326,7 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cKe-hi-ZRo">
-                                <rect key="frame" x="67" y="224" width="240" height="97"/>
+                                <rect key="frame" x="67" y="220" width="240" height="97"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="97" id="ACE-4w-PQZ"/>
@@ -483,6 +481,5 @@
         <image name="home" width="30" height="30"/>
         <image name="placeholder-image" width="556" height="350"/>
         <image name="settings" width="30" height="30"/>
-        <image name="shopping-cart" width="30" height="30"/>
     </resources>
 </document>

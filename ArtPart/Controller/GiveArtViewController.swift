@@ -145,8 +145,6 @@ extension GiveArtViewController: UIImagePickerControllerDelegate, UINavigationCo
             self.imageURLS.append(downloadString)
         })
         
-        // End of Storage block
-        
         needsNewKey = false
         
         DispatchQueue.main.async {
