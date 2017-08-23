@@ -11,6 +11,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SnellRoundhand.ttc">
+            <string>SnellRoundhand-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--LoginViewController-->
         <scene sceneID="tne-QT-ifu">
@@ -29,6 +34,18 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="e0l-z8-PFw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ArtPart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWE-3A-OAu">
+                                            <rect key="frame" x="99.5" y="120" width="177" height="63.5"/>
+                                            <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="50"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lWE-3A-OAu" firstAttribute="centerX" secondItem="e0l-z8-PFw" secondAttribute="centerX" id="gXT-oh-Bo8"/>
+                                        <constraint firstItem="lWE-3A-OAu" firstAttribute="top" secondItem="e0l-z8-PFw" secondAttribute="top" constant="120" id="w5u-1l-hlx"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
@@ -46,6 +63,7 @@
                             <constraint firstItem="ddd-wA-84j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6aT-dJ-rrV"/>
                             <constraint firstItem="ddd-wA-84j" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="9Qf-Sd-Ze2"/>
                             <constraint firstItem="ddd-wA-84j" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fgg-vQ-Emu"/>
+                            <constraint firstItem="noD-zy-xSR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lWE-3A-OAu" secondAttribute="bottom" constant="50" id="HWb-wa-YDh"/>
                             <constraint firstItem="noD-zy-xSR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ibc-Yb-Irn"/>
                             <constraint firstItem="ddd-wA-84j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Vm0-AB-wJJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="noD-zy-xSR" secondAttribute="bottom" constant="72" id="qIA-Rq-ALg"/>
