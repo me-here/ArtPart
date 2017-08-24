@@ -10,7 +10,8 @@ import UIKit
 import GoogleSignIn
 
 class LoginViewController: UIViewController {
-
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -19,9 +20,14 @@ class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+            DispatchQueue.main.async {
+                self.activityIndicator.startAnimating()
+            }
             print("Transition VC's")
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 self.performSegue(withIdentifier: "loginSegue", sender: self)
             }
         }

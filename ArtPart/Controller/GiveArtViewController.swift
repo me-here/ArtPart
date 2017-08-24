@@ -29,7 +29,9 @@ class GiveArtViewController: UIViewController {
                 selectedImages.append(#imageLiteral(resourceName: "placeholder-image"))
             }
         }
+        
         nameField.delegate = self
+        descriptionField.delegate = self
         descriptionField.delegate = self
     }
     

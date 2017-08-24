@@ -41,8 +41,17 @@
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="fMO-EH-QGj">
+                                            <rect key="frame" x="163" y="470" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="Vad-DV-ZJ2"/>
+                                                <constraint firstAttribute="width" constant="50" id="kd2-MY-cn3"/>
+                                            </constraints>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="fMO-EH-QGj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lWE-3A-OAu" secondAttribute="bottom" constant="80" id="WIN-Jl-oEV"/>
+                                        <constraint firstItem="fMO-EH-QGj" firstAttribute="centerX" secondItem="e0l-z8-PFw" secondAttribute="centerX" id="dfo-HJ-z4X"/>
                                         <constraint firstItem="lWE-3A-OAu" firstAttribute="centerX" secondItem="e0l-z8-PFw" secondAttribute="centerX" id="gXT-oh-Bo8"/>
                                         <constraint firstItem="lWE-3A-OAu" firstAttribute="top" secondItem="e0l-z8-PFw" secondAttribute="top" constant="120" id="w5u-1l-hlx"/>
                                     </constraints>
@@ -66,11 +75,13 @@
                             <constraint firstItem="noD-zy-xSR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lWE-3A-OAu" secondAttribute="bottom" constant="50" id="HWb-wa-YDh"/>
                             <constraint firstItem="noD-zy-xSR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ibc-Yb-Irn"/>
                             <constraint firstItem="ddd-wA-84j" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Vm0-AB-wJJ"/>
+                            <constraint firstItem="noD-zy-xSR" firstAttribute="top" secondItem="fMO-EH-QGj" secondAttribute="bottom" constant="20" id="luO-Zm-Hlj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="noD-zy-xSR" secondAttribute="bottom" constant="72" id="qIA-Rq-ALg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="fMO-EH-QGj" id="lPn-5f-4Qy"/>
                         <segue destination="XgL-8o-YGh" kind="show" identifier="loginSegue" id="yWx-7P-tPU"/>
                     </connections>
                 </viewController>
@@ -190,10 +201,10 @@
             </objects>
             <point key="canvasLocation" x="2597.5999999999999" y="477.21139430284859"/>
         </scene>
-        <!--Payment Processed View Controller-->
+        <!--Art Given View Controller-->
         <scene sceneID="J6v-2t-9if">
             <objects>
-                <viewController id="En5-h8-JpU" customClass="PaymentProcessedViewController" customModule="ArtPart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="En5-h8-JpU" customClass="ArtGivenViewController" customModule="ArtPart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t0B-4N-QbY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6aA-vz-722" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3413.5999999999999" y="476.31184407796104"/>
+            <point key="canvasLocation" x="3441" y="477"/>
         </scene>
         <!--Give Art-->
         <scene sceneID="8eK-9w-LRk">

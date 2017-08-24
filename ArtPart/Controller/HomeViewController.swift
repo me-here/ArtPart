@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
         
         let url = ref.child("ArtPieces")
         url.observe(.value) { snapshot in
+            self.artworks.removeAll()
             self.numberOfArtWorks = Int(snapshot.childrenCount)
             for child in snapshot.children {
                 let childSnapshot = child as? DataSnapshot
@@ -108,7 +109,7 @@ extension HomeViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtCollectionViewCell", for: indexPath) as! ArtCollectionViewCell
         
         
-        let photURL = self.artworks[indexPath.row + 1]["pic1"]  // Firebase starts @ 1
+        let photURL = self.artworks[indexPath.row]["pic1"] // + 1  // Firebase starts @ 1
         guard let photoURL = photURL as? String else {
             // Analytics ...
             return cell

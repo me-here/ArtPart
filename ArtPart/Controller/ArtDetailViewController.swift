@@ -64,7 +64,9 @@ extension ArtDetailViewController: PKPaymentAuthorizationViewControllerDelegate 
     @objc func applePayTriggered() {
         let fare = PKPaymentSummaryItem(label: "Minimum Fare", amount: NSDecimalNumber(string: "9.99"), type: .final)
         let tax = PKPaymentSummaryItem(label: "Tax", amount: NSDecimalNumber(string: "1.00"), type: .final)
-        let total = PKPaymentSummaryItem(label: "ArtPart", amount: NSDecimalNumber(string: "10.99"), type: .pending)
+        
+        let totalDouble = (fare.amount as? Double ?? 0) + (tax.amount as? Double ?? 0)
+        let total = PKPaymentSummaryItem(label: "ArtPart", amount: NSDecimalNumber(string: "\(totalDouble)"), type: .pending)
         
         let paymentSummaryItems = [fare, tax, total]
         

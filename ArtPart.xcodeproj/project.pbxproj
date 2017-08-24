@@ -13,9 +13,10 @@
 		433D6BCB1F44C88100DFBAEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 433D6BC91F44C88100DFBAEA /* Main.storyboard */; };
 		433D6BCD1F44C88100DFBAEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 433D6BCC1F44C88100DFBAEA /* Assets.xcassets */; };
 		433D6BD01F44C88100DFBAEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 433D6BCE1F44C88100DFBAEA /* LaunchScreen.storyboard */; };
-		433FF81E1F4E431800503C7F /* PaymentProcessedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433FF81D1F4E431800503C7F /* PaymentProcessedViewController.swift */; };
+		433FF81E1F4E431800503C7F /* ArtGivenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433FF81D1F4E431800503C7F /* ArtGivenViewController.swift */; };
 		433FF8201F4E448600503C7F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433FF81F1F4E448600503C7F /* DetailsViewController.swift */; };
 		433FF8221F4E517900503C7F /* ViewTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433FF8211F4E517900503C7F /* ViewTasks.swift */; };
+		433FF8241F4E8CA500503C7F /* PaymentGivenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 433FF8231F4E8CA500503C7F /* PaymentGivenViewController.swift */; };
 		4382B4141F44C9EC00BD71E0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B4131F44C9EC00BD71E0 /* SettingsViewController.swift */; };
 		4382B4161F44C9FA00BD71E0 /* GiveArtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B4151F44C9FA00BD71E0 /* GiveArtViewController.swift */; };
 		4382B4181F44CA0700BD71E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B4171F44CA0700BD71E0 /* HomeViewController.swift */; };
@@ -33,9 +34,10 @@
 		433D6BCC1F44C88100DFBAEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		433D6BCF1F44C88100DFBAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		433D6BD11F44C88100DFBAEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		433FF81D1F4E431800503C7F /* PaymentProcessedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProcessedViewController.swift; sourceTree = "<group>"; };
+		433FF81D1F4E431800503C7F /* ArtGivenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtGivenViewController.swift; sourceTree = "<group>"; };
 		433FF81F1F4E448600503C7F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		433FF8211F4E517900503C7F /* ViewTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTasks.swift; sourceTree = "<group>"; };
+		433FF8231F4E8CA500503C7F /* PaymentGivenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGivenViewController.swift; sourceTree = "<group>"; };
 		4382B4131F44C9EC00BD71E0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4382B4151F44C9FA00BD71E0 /* GiveArtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveArtViewController.swift; sourceTree = "<group>"; };
 		4382B4171F44CA0700BD71E0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -119,8 +121,9 @@
 				4382B4151F44C9FA00BD71E0 /* GiveArtViewController.swift */,
 				4382B4171F44CA0700BD71E0 /* HomeViewController.swift */,
 				43F8E52A1F4655D100BDFF5D /* ArtDetailViewController.swift */,
-				433FF81D1F4E431800503C7F /* PaymentProcessedViewController.swift */,
+				433FF81D1F4E431800503C7F /* ArtGivenViewController.swift */,
 				433FF81F1F4E448600503C7F /* DetailsViewController.swift */,
+				433FF8231F4E8CA500503C7F /* PaymentGivenViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -282,7 +285,7 @@
 			files = (
 				4382B4181F44CA0700BD71E0 /* HomeViewController.swift in Sources */,
 				43F8E52B1F4655D100BDFF5D /* ArtDetailViewController.swift in Sources */,
-				433FF81E1F4E431800503C7F /* PaymentProcessedViewController.swift in Sources */,
+				433FF81E1F4E431800503C7F /* ArtGivenViewController.swift in Sources */,
 				43A772301F451A3900CA4AA8 /* ArtRequests.swift in Sources */,
 				433D6BC81F44C88100DFBAEA /* LoginViewController.swift in Sources */,
 				4382B41C1F44F38D00BD71E0 /* ArtCollectionViewCell.swift in Sources */,
@@ -290,6 +293,7 @@
 				433FF8221F4E517900503C7F /* ViewTasks.swift in Sources */,
 				4382B4141F44C9EC00BD71E0 /* SettingsViewController.swift in Sources */,
 				4382B4161F44C9FA00BD71E0 /* GiveArtViewController.swift in Sources */,
+				433FF8241F4E8CA500503C7F /* PaymentGivenViewController.swift in Sources */,
 				433FF8201F4E448600503C7F /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
