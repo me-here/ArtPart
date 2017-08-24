@@ -32,7 +32,8 @@ class GiveArtViewController: UIViewController {
         
         nameField.delegate = self
         descriptionField.delegate = self
-        descriptionField.delegate = self
+        priceField.delegate = self
+        priceField.keyboardType = .decimalPad
     }
     
     override func viewDidAppear(_ animated: Bool) {
