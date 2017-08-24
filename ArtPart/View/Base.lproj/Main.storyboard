@@ -449,8 +449,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8l-RO-UhO">
-                                                    <rect key="frame" x="8" y="11.5" width="106" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attributions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8l-RO-UhO">
+                                                    <rect key="frame" x="8" y="11.5" width="89" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -499,10 +499,10 @@
             </objects>
             <point key="canvasLocation" x="1821.5999999999999" y="1205.8470764617691"/>
         </scene>
-        <!--View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="vqv-Yw-pIQ">
             <objects>
-                <viewController id="8fZ-UV-u0G" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailsViewController" id="8fZ-UV-u0G" customClass="DetailsViewController" customModule="ArtPart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DTR-RJ-Xl2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -523,6 +523,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NQ6-CP-5Ld"/>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="xkc-YZ-0bM" id="fjX-1d-Prx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nu-E8-qY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
