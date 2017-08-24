@@ -47,7 +47,7 @@ class ArtRequests {
         task.resume()
     }
     
-    static func sendEmail(to email: String, subject: String, text: String) {
+    static func sendEmail(to email: String, subject: String, text: String, completion: ((Bool)->())? = nil) {
         let basicAuthID = "\(MailJetEmail.userName):\(MailJetEmail.passWord)" // Basic access auth uses method of name:password in base64 as string
         let encodedData = basicAuthID.data(using: .utf8)
         
@@ -73,12 +73,14 @@ class ArtRequests {
             (data, error) in
             guard error == nil else {
                 // Analytics ...
+                completion?(false)
                 print(error?.localizedDescription ?? "Error sending email")
                 return
             }
             
             let dataStr = String(data: data!, encoding: String.Encoding.utf8)
             print(dataStr ?? "ERORRRRRR")
+            completion?(true)
         })
         
     }

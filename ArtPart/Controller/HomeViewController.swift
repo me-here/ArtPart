@@ -117,6 +117,7 @@ extension HomeViewController: UICollectionViewDataSource {
         ArtRequests.requestWith(requestType: .get, requestURL: photoURL, addValues: [:], httpBody: nil, completionHandler: { data, error in
             guard error == nil else {
                 print("ERROR")
+                self.displayError(message: "Failure populating images.")
                 return
             }
             DispatchQueue.main.async {
