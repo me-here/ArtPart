@@ -82,7 +82,7 @@ extension ArtDetailViewController: PKPaymentAuthorizationViewControllerDelegate 
         paymentRequest.requiredShippingAddressFields = .all
         //paymentRequest.paymentSummaryItems = makeSummaryItems(requiresInternationalSurcharge: false)
         
-        guard let vc = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest) as? PKPaymentAuthorizationViewController else {
+        guard let vc = Optional(PKPaymentAuthorizationViewController(paymentRequest: paymentRequest)) else { // PKPaymentAuthorizationController's init can return nil and we don't want the program to crash accidentally
             print("INVALID")
             return
         }
