@@ -93,8 +93,10 @@ extension ArtDetailViewController: PKPaymentAuthorizationViewControllerDelegate 
     }
     
     func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
+        let paymentCompleteVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentGivenViewController")
         DispatchQueue.main.async {
             controller.dismiss(animated: true, completion: nil)
+            self.show(paymentCompleteVC!, sender: self)
         }
     }
     

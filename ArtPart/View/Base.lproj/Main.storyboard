@@ -402,6 +402,36 @@
             </objects>
             <point key="canvasLocation" x="3440.8000000000002" y="-215.44227886056973"/>
         </scene>
+        <!--Payment Given View Controller-->
+        <scene sceneID="qUw-CZ-JdZ">
+            <objects>
+                <viewController storyboardIdentifier="PaymentGivenViewController" id="PPn-22-DCh" customClass="PaymentGivenViewController" customModule="ArtPart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HoE-jq-hfE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you. A payment confirmation email will be sent to you shortly." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIi-dW-eCR">
+                                <rect key="frame" x="69.5" y="81" width="236" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="1j2-dA-wbs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vIi-dW-eCR" firstAttribute="centerX" secondItem="rGs-0O-oO9" secondAttribute="centerX" id="nZL-qF-EPG"/>
+                            <constraint firstItem="vIi-dW-eCR" firstAttribute="top" secondItem="rGs-0O-oO9" secondAttribute="top" constant="61" id="sX7-3d-mGS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rGs-0O-oO9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UUe-f0-3Aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4252" y="-214.54272863568218"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Wmm-gZ-w3Z">
             <objects>
