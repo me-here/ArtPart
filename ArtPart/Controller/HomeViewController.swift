@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
         ref = Database.database().reference()
         
         let url = ref.child("ArtPieces")
-        url.observe(.value) { snapshot in
+        url.observe(.value, with: { snapshot in
             self.artworks.removeAll()
             self.numberOfArtWorks = Int(snapshot.childrenCount)
             for child in snapshot.children {
@@ -61,7 +61,7 @@ class HomeViewController: UIViewController {
                 }
             }
             
-        }
+        })
     }
     
     func setupFlowLayout(flowLayout: UICollectionViewFlowLayout, numberOfHorItems: CGFloat, numberOfVertItems: CGFloat, spacing: CGFloat) {

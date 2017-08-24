@@ -22,6 +22,7 @@
 		4382B4181F44CA0700BD71E0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B4171F44CA0700BD71E0 /* HomeViewController.swift */; };
 		4382B41A1F44CC6800BD71E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4382B4191F44CB5000BD71E0 /* GoogleService-Info.plist */; };
 		4382B41C1F44F38D00BD71E0 /* ArtCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382B41B1F44F38D00BD71E0 /* ArtCollectionViewCell.swift */; };
+		43A566A81F4F504F00B59610 /* convertedMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A566A71F4F504F00B59610 /* convertedMain.storyboard */; };
 		43A772301F451A3900CA4AA8 /* ArtRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A7722F1F451A3900CA4AA8 /* ArtRequests.swift */; };
 		43F8E52B1F4655D100BDFF5D /* ArtDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F8E52A1F4655D100BDFF5D /* ArtDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		4382B4171F44CA0700BD71E0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4382B4191F44CB5000BD71E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4382B41B1F44F38D00BD71E0 /* ArtCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtCollectionViewCell.swift; sourceTree = "<group>"; };
+		43A566A71F4F504F00B59610 /* convertedMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = convertedMain.storyboard; sourceTree = "<group>"; };
 		43A7722F1F451A3900CA4AA8 /* ArtRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtRequests.swift; sourceTree = "<group>"; };
 		43F8E52A1F4655D100BDFF5D /* ArtDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtDetailViewController.swift; sourceTree = "<group>"; };
 		43F8E52C1F469BE400BDFF5D /* ArtPart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ArtPart.entitlements; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				433D6BC91F44C88100DFBAEA /* Main.storyboard */,
 				4382B41B1F44F38D00BD71E0 /* ArtCollectionViewCell.swift */,
 				433FF8211F4E517900503C7F /* ViewTasks.swift */,
+				43A566A71F4F504F00B59610 /* convertedMain.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				433D6BD01F44C88100DFBAEA /* LaunchScreen.storyboard in Resources */,
+				43A566A81F4F504F00B59610 /* convertedMain.storyboard in Resources */,
 				4382B41A1F44CC6800BD71E0 /* GoogleService-Info.plist in Resources */,
 				433D6BCD1F44C88100DFBAEA /* Assets.xcassets in Resources */,
 				433D6BCB1F44C88100DFBAEA /* Main.storyboard in Resources */,
@@ -439,7 +443,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.mihirthanekar.ArtPart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -456,7 +460,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.mihirthanekar.ArtPart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

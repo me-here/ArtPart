@@ -65,7 +65,7 @@ extension ArtDetailViewController: PKPaymentAuthorizationViewControllerDelegate 
         let fare = PKPaymentSummaryItem(label: "Minimum Fare", amount: NSDecimalNumber(string: "9.99"), type: .final)
         let tax = PKPaymentSummaryItem(label: "Tax", amount: NSDecimalNumber(string: "1.00"), type: .final)
         
-        let totalDouble = (fare.amount as? Double ?? 0) + (tax.amount as? Double ?? 0)
+        let totalDouble = (fare.amount as Double) + (tax.amount as Double)
         let total = PKPaymentSummaryItem(label: "ArtPart", amount: NSDecimalNumber(string: "\(totalDouble)"), type: .pending)
         
         let paymentSummaryItems = [fare, tax, total]
@@ -82,7 +82,7 @@ extension ArtDetailViewController: PKPaymentAuthorizationViewControllerDelegate 
         paymentRequest.requiredShippingAddressFields = .all
         //paymentRequest.paymentSummaryItems = makeSummaryItems(requiresInternationalSurcharge: false)
         
-        guard let vc = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest) else {
+        guard let vc = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest) as? PKPaymentAuthorizationViewController else {
             print("INVALID")
             return
         }
