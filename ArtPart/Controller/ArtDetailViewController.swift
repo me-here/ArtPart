@@ -79,7 +79,7 @@ extension ArtDetailViewController: PKPaymentAuthorizationViewControllerDelegate 
         paymentRequest.supportedNetworks = ArtDetailViewController.supportedNetworks
         paymentRequest.merchantCapabilities = .capability3DS
         paymentRequest.paymentSummaryItems = paymentSummaryItems
-        paymentRequest.requiredShippingAddressFields = .all
+        paymentRequest.requiredShippingAddressFields = .postalAddress
         //paymentRequest.paymentSummaryItems = makeSummaryItems(requiresInternationalSurcharge: false)
         
         guard let vc = Optional(PKPaymentAuthorizationViewController(paymentRequest: paymentRequest)) else { // PKPaymentAuthorizationController's init can return nil and we don't want the program to crash accidentally

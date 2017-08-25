@@ -22,6 +22,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        artCollectionView.dataSource = self
+        artCollectionView.delegate = self
+        
         self.registerForPreviewing(with: self, sourceView: artCollectionView)   // Registration & Automatic unregistration
         setupFlowLayout(flowLayout: artFlowLayout, numberOfHorItems: 3, numberOfVertItems: 5, spacing: 3.0)
         
@@ -56,9 +60,11 @@ class HomeViewController: UIViewController {
                 }
                 
                 self.artworks.append(artworkURLS)
-                DispatchQueue.main.async {
-                    self.artCollectionView.reloadData()
-                }
+                
+            }
+            
+            DispatchQueue.main.async {
+                self.artCollectionView.reloadData()
             }
             
         })

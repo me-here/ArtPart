@@ -17,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.delegate?.window??.tintColor = UIColor(red: 242/255, green: 174/255, blue: 110/255, alpha: 1.0)    // Tab colors
-        UITabBar.appearance().barStyle = UIBarStyle.blackOpaque
-        UITabBar.appearance().isOpaque = false
-        UINavigationBar.appearance().barStyle = UIBarStyle.black
-        UINavigationBar.appearance().backgroundColor = UIColor(red: 247/255, green: 209/255, blue: 133, alpha: 1)
+        //UITabBar.appearance().barStyle = UIBarStyle.blackOpaque
+        //UITabBar.appearance().isOpaque = false
+        //UINavigationBar.appearance().barStyle = UIBarStyle.black
+        //UINavigationBar.appearance().backgroundColor = UIColor(red: 247/255, green: 209/255, blue: 133, alpha: 1)
        
         FirebaseApp.configure()
         

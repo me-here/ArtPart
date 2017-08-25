@@ -13,7 +13,7 @@ import FirebaseStorage
 
 class GiveArtViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var nameField: UITextField!
+    //@IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     
@@ -24,13 +24,17 @@ class GiveArtViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         if selectedImages.isEmpty {
             for _ in 0...tableView.numberOfRows(inSection: 0) - 1 {
                 selectedImages.append(#imageLiteral(resourceName: "placeholder-image"))
             }
         }
         
-        nameField.delegate = self
+        //nameField.delegate = self
         descriptionField.delegate = self
         priceField.delegate = self
         priceField.keyboardType = .decimalPad
