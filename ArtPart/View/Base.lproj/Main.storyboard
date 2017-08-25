@@ -86,7 +86,7 @@
         <!--Give Art-->
         <scene sceneID="5p3-36-WTI">
             <objects>
-                <navigationController id="HpT-qe-gdf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HpT-qe-gdf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Give Art" image="give-love" id="E1I-DV-9cw"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
@@ -212,7 +212,7 @@
         <!--Home-->
         <scene sceneID="l76-is-A4j">
             <objects>
-                <navigationController id="7ra-uV-QUh" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ra-uV-QUh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="P99-jS-T33"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
@@ -402,7 +402,7 @@
         <!--Settings-->
         <scene sceneID="Nbo-PH-aiN">
             <objects>
-                <navigationController id="0sL-kx-lMF" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0sL-kx-lMF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="CCT-cf-BvT"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
