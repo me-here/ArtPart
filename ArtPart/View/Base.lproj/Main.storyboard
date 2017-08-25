@@ -88,7 +88,9 @@
             <objects>
                 <navigationController id="HpT-qe-gdf" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Give Art" image="give-love" id="E1I-DV-9cw"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pDV-SF-VaE">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pDV-SF-VaE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -212,7 +214,9 @@
             <objects>
                 <navigationController id="7ra-uV-QUh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="P99-jS-T33"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vjv-Kg-76W">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vjv-Kg-76W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -400,7 +404,9 @@
             <objects>
                 <navigationController id="0sL-kx-lMF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="CCT-cf-BvT"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uMj-yA-hG2">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uMj-yA-hG2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
