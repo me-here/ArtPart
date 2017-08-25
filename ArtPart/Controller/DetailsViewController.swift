@@ -14,7 +14,7 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Settings- Detail"
+        self.navigationItem.title = "Settings-Detail"
         textField.isEditable = false
         textField.isSelectable = false
     }
