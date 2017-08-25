@@ -90,7 +90,7 @@
                     <tabBarItem key="tabBarItem" title="Give Art" image="give-love" id="E1I-DV-9cw"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pDV-SF-VaE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pDV-SF-VaE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -184,6 +184,7 @@
                         <outlet property="descriptionField" destination="dCl-1a-FcP" id="nqb-rx-ulm"/>
                         <outlet property="priceField" destination="7hi-Cv-jTu" id="mcD-3m-U5g"/>
                         <outlet property="tableView" destination="Wp1-Fa-3TB" id="3OV-3T-cvb"/>
+                        <segue destination="Or1-ad-M8z" kind="show" identifier="success" id="nBl-YJ-I1T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mf8-ef-cyi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,7 +217,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="P99-jS-T33"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vjv-Kg-76W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vjv-Kg-76W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -397,7 +398,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fJN-Ks-7Fx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3712" y="-208"/>
+            <point key="canvasLocation" x="3734" y="-208"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Nbo-PH-aiN">
@@ -406,7 +407,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="CCT-cf-BvT"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uMj-yA-hG2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uMj-yA-hG2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -414,6 +415,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UeM-T2-nVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="438" y="974"/>
+        </scene>
+        <!--Art Given View Controller-->
+        <scene sceneID="2Ec-lv-Dxq">
+            <objects>
+                <viewController id="Or1-ad-M8z" customClass="ArtGivenViewController" customModule="ArtPart" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uR3-Mu-Igb"/>
+                        <viewControllerLayoutGuide type="bottom" id="mTO-IR-HY0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2zv-UV-O0J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks for purchasing art from us! We'll send you email confirmation shortly." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NXt-qx-K2q">
+                                <rect key="frame" x="67" y="233.5" width="241" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="250" id="CRs-PT-spu"/>
+                                    <constraint firstAttribute="height" constant="100" id="SOm-qO-xke"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NXt-qx-K2q" firstAttribute="centerX" secondItem="2zv-UV-O0J" secondAttribute="centerX" id="1Y8-OR-hGw"/>
+                            <constraint firstItem="NXt-qx-K2q" firstAttribute="centerY" secondItem="2zv-UV-O0J" secondAttribute="centerY" constant="-50" id="TIW-VQ-U25"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFf-nx-HfF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2926" y="555"/>
         </scene>
     </scenes>
     <resources>

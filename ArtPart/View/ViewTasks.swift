@@ -9,8 +9,8 @@
 import UIKit
 
 extension UIViewController {
-    func displayError(message: String, additionalActions: [UIAlertAction] = []) {
-        let alert = UIAlertController(title: "Network error.", message: message, preferredStyle: .alert)
+    func displayError(title: String = "Network error.", message: String, additionalActions: [UIAlertAction] = []) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok.", style: .default) { _ in
             DispatchQueue.main.async {

@@ -13,7 +13,6 @@ import FirebaseStorage
 
 class GiveArtViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    //@IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var priceField: UITextField!
     
@@ -34,7 +33,6 @@ class GiveArtViewController: UIViewController {
             }
         }
         
-        //nameField.delegate = self
         descriptionField.delegate = self
         priceField.delegate = self
         priceField.keyboardType = .decimalPad
@@ -57,12 +55,14 @@ class GiveArtViewController: UIViewController {
             let uid = Auth.auth().currentUser?.uid,
             let desc = descriptionField.text else {
             // Alert
+            displayError(title: "Empty fields..", message: "Please enter a price and description.", additionalActions: [])
             return
         }
         
         for image in selectedImages {
             if image == #imageLiteral(resourceName: "placeholder-image") {
                 // Alert
+                displayError(title: "Image not selected.", message: "Select all 3 images please.", additionalActions: [])
                 return
             }
         }
@@ -97,6 +97,13 @@ class GiveArtViewController: UIViewController {
 extension GiveArtViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let imagePicker = UIImagePickerController()
+        
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else { // We don't want to allow camera roll because then the user could upload any images (that they may not have created) more easily.
+            displayError(title: "Source type not available", message: "There is no camera on this device.", additionalActions: [])
+            tableView.deselectRow(at: indexPath, animated: true)
+            return
+        }
+        
         imagePicker.sourceType = UIImagePickerControllerSourceType.camera
         imagePicker.delegate = self
         DispatchQueue.main.async {
