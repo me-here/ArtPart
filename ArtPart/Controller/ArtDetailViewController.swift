@@ -16,8 +16,9 @@ class ArtDetailViewController: UIViewController {
     @IBOutlet weak var artDescription: UITextView!
     var desc: String?
     
-    
     @IBOutlet weak var payView: UIView!
+    
+    var didPay = false
     
     static let supportedNetworks = [
         PKPaymentNetwork.amex,
@@ -46,8 +47,10 @@ class ArtDetailViewController: UIViewController {
         } else {
             // Fallback on earlier versions
         }
-        
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        didPay = false
     }
     
     override var previewActionItems: [UIPreviewActionItem] {
@@ -93,15 +96,20 @@ extension ArtDetailViewController: PKPaymentAuthorizationViewControllerDelegate 
     }
     
     func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
-        let paymentCompleteVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentGivenViewController")
         DispatchQueue.main.async {
             controller.dismiss(animated: true, completion: nil)
+        }
+        
+        guard didPay else {return}  // Only send an email if they did pay (not if they clicked 'cancel')
+        let paymentCompleteVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentGivenViewController")
+        DispatchQueue.main.async {
             self.show(paymentCompleteVC!, sender: self)
         }
     }
     
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: @escaping (PKPaymentAuthorizationStatus) -> Void) {
         paymentToken = payment.token
+        didPay = true
         
         completion(.success)
     }
