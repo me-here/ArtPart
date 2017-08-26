@@ -115,7 +115,7 @@ extension HomeViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtCollectionViewCell", for: indexPath) as! ArtCollectionViewCell
         
         
-        let photURL = self.artworks[indexPath.row]["pic1"] // + 1  // Firebase starts @ 1
+        let photURL = self.artworks[indexPath.row]["pic1"]
         guard let photoURL = photURL as? String else {
             // Analytics ...
             return cell
@@ -154,8 +154,6 @@ extension HomeViewController: UIViewControllerPreviewingDelegate {
         let cellRect = cellAtPath.frame
         let sourceRect = previewingContext.sourceView.convert(cellRect, to: artCollectionView)
         previewingContext.sourceRect = sourceRect
-        
-        //previewing
         
         return artDetail
     }
