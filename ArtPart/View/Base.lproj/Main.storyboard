@@ -91,7 +91,7 @@
                     <tabBarItem key="tabBarItem" title="Give Art" image="give-love" id="E1I-DV-9cw"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pDV-SF-VaE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pDV-SF-VaE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -219,7 +219,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="P99-jS-T33"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vjv-Kg-76W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vjv-Kg-76W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -402,6 +402,24 @@
             </objects>
             <point key="canvasLocation" x="3734" y="-208"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Jd8-QK-nOc">
+            <objects>
+                <viewController storyboardIdentifier="hi" id="dlZ-ir-F99" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8gC-5s-y9N"/>
+                        <viewControllerLayoutGuide type="bottom" id="IYi-Et-7KY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="93i-pO-UGL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8nl-VP-6Ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4731" y="596"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="Nbo-PH-aiN">
             <objects>
@@ -409,7 +427,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="CCT-cf-BvT"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uMj-yA-hG2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uMj-yA-hG2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

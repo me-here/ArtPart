@@ -23,6 +23,10 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let hi = self.storyboard?.instantiateViewController(withIdentifier: "hi")
+        
+        tabBarController?.addTab(tab: hi!, at: (tabBarController?.viewControllers?.count)! - 1, title: "HI", image: #imageLiteral(resourceName: "settings"))
+        
         artCollectionView.dataSource = self
         artCollectionView.delegate = self
         
