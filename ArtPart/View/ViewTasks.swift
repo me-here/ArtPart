@@ -34,8 +34,8 @@ extension UITabBarController {
     func addTab(tab vc: UIViewController, at index: Int, title: String, image: UIImage) {
         var currentTabs = self.viewControllers  // get vc's in tab controller
         currentTabs?.insert(vc, at: index)  // Add a vc
-        self.setViewControllers(currentTabs, animated: true)
         
+        self.setViewControllers(currentTabs, animated: true)
         configureTab(at: index, title: title, image: image)
     }
     

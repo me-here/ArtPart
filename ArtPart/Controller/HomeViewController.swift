@@ -23,9 +23,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let hi = self.storyboard?.instantiateViewController(withIdentifier: "hi")
+        let hi = (self.storyboard?.instantiateViewController(withIdentifier: "hi"))!
+        let index = (tabBarController?.viewControllers?.count)! - 1 // 1 behind last tab
         
-        tabBarController?.addTab(tab: hi!, at: (tabBarController?.viewControllers?.count)! - 1, title: "HI", image: #imageLiteral(resourceName: "settings"))
+        // QUERY + IF
+        tabBarController?.addTab(tab: hi, at: index, title: "My Art", image: #imageLiteral(resourceName: "artboard"))
         
         artCollectionView.dataSource = self
         artCollectionView.delegate = self
@@ -152,8 +154,6 @@ extension HomeViewController: UIViewControllerPreviewingDelegate {
         let artDetail = self.storyboard?.instantiateViewController(withIdentifier: "ArtDetailViewController") as! ArtDetailViewController
         artDetail.desc = descriptions[indexPath.row]
         artDetail.image = cellAtPath.artImage.image
-        
-        
         
         let cellRect = cellAtPath.frame
         let sourceRect = previewingContext.sourceView.convert(cellRect, to: artCollectionView)

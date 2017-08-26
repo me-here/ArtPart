@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -91,7 +92,7 @@
                     <tabBarItem key="tabBarItem" title="Give Art" image="give-love" id="E1I-DV-9cw"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pDV-SF-VaE">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="pDV-SF-VaE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -219,7 +220,7 @@
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="P99-jS-T33"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vjv-Kg-76W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vjv-Kg-76W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -321,40 +322,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Av-e7-4x8">
-                                <rect key="frame" x="137" y="89" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Q8z-Mn-UuP"/>
-                                    <constraint firstAttribute="height" constant="100" id="ox6-CF-ivw"/>
-                                </constraints>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gps-NW-yrD">
-                                <rect key="frame" x="67" y="229" width="240" height="97"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="97" id="H5I-yB-Ztw"/>
-                                    <constraint firstAttribute="width" constant="240" id="JyC-sa-ulX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3s-05-R0R">
-                                <rect key="frame" x="67" y="538" width="240" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.77520073784722221" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="dgf-nt-laP"/>
-                                    <constraint firstAttribute="width" constant="240" id="zyb-uT-864"/>
-                                </constraints>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zLj-gZ-EiD">
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Av-e7-4x8">
+                                        <rect key="frame" x="121.5" y="0.0" width="100.5" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1Av-e7-4x8" secondAttribute="height" multiplier="1:1" id="6ac-oL-zMN"/>
+                                            <constraint firstAttribute="width" constant="100" id="Q8z-Mn-UuP"/>
+                                            <constraint firstAttribute="height" constant="100" id="ox6-CF-ivw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="HIkfjdkjfkJkfjdkfjdksjfkldsjfkdsjfkljdsklfjdsjfkdjskfjdksjfkdsjfkldsjfkfj" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gps-NW-yrD">
+                                        <rect key="frame" x="51.5" y="275" width="240" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="0Ga-hS-Ptp"/>
+                                            <constraint firstAttribute="width" constant="240" id="JyC-sa-ulX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3s-05-R0R">
+                                        <rect key="frame" x="51.5" y="494" width="240" height="60"/>
+                                        <color key="backgroundColor" red="0.0" green="0.77520073784722221" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="r9o-MP-zV1"/>
+                                            <constraint firstAttribute="width" constant="240" id="zyb-uT-864"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="L4V-0e-7iz" firstAttribute="top" secondItem="C3s-05-R0R" secondAttribute="bottom" constant="20" id="8At-al-wxf"/>
-                            <constraint firstItem="Gps-NW-yrD" firstAttribute="top" secondItem="1Av-e7-4x8" secondAttribute="bottom" constant="40" id="8zs-z1-zsS"/>
-                            <constraint firstItem="Gps-NW-yrD" firstAttribute="centerX" secondItem="R37-SD-iuT" secondAttribute="centerX" id="Mnk-AM-43q"/>
-                            <constraint firstItem="1Av-e7-4x8" firstAttribute="top" secondItem="xIb-Cb-d0c" secondAttribute="bottom" constant="25" id="OfQ-aQ-5mV"/>
-                            <constraint firstItem="C3s-05-R0R" firstAttribute="centerX" secondItem="R37-SD-iuT" secondAttribute="centerX" id="VlL-d5-Pmg"/>
-                            <constraint firstItem="1Av-e7-4x8" firstAttribute="centerX" secondItem="R37-SD-iuT" secondAttribute="centerX" id="gaG-3j-twS"/>
+                            <constraint firstItem="zLj-gZ-EiD" firstAttribute="top" secondItem="xIb-Cb-d0c" secondAttribute="bottom" id="cC8-iz-RVC"/>
+                            <constraint firstItem="L4V-0e-7iz" firstAttribute="top" secondItem="zLj-gZ-EiD" secondAttribute="bottom" id="sam-ZS-Xk8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zLj-gZ-EiD" secondAttribute="trailing" id="w9b-4T-8Q0"/>
+                            <constraint firstItem="zLj-gZ-EiD" firstAttribute="leading" secondItem="R37-SD-iuT" secondAttribute="leadingMargin" id="xyY-ms-wvV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="View Art" id="Uq7-GQ-ymM"/>
@@ -418,7 +423,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nl-VP-6Ab" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4731" y="596"/>
+            <point key="canvasLocation" x="4738" y="555"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Nbo-PH-aiN">
@@ -427,7 +432,7 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="CCT-cf-BvT"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uMj-yA-hG2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uMj-yA-hG2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
