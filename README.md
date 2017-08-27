@@ -6,7 +6,7 @@ ArtPart is an app that incentivises people to donate to charity while at the sam
 ## Reviewer Guide
 After you've extracted the zip file, double click on the _.xcworkspace_ file. This project uses CocoaPods and all of the dependencies are already in the zip. Once inside XCode, click the run button or hit _command + r_ to build and run. 
 
-**It is best to run this project on a real device**, because you need it for taking a picture with the camera (since the simulator doesn't have a camera). Not allowing the `photoAlbum` sourcetype was an intentional design decision because otherwise it would be very easy for the user to upload art that is not theirs.. etc.
+If you want to change the source type of the `UIImagePickerController`, you can do so in the settings tab on the bottom of the screen with the segmented control.
 
 ## User Guide
 When the app is running on your device, click on the _Sign in with google button_ and login to your account. From there, you will proceed to the next screen after some activity indicator loading (if your network is slow). 
@@ -32,3 +32,4 @@ Click on the settings tab on the bottom right and click the logout button.
 - Apple pay for payments
 - Sendmail API to send emails when art is bought or put on the market
 - 3D touch
+- UserDefaults
