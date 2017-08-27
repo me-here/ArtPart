@@ -40,7 +40,7 @@ class GiveArtViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if needsNewKey {
-            key = "\(Int(arc4random_uniform(100000000)))"   // They most likely won't have 100,000,000 pieces of art and the possibility of a conflict is infinitesemaly low...
+            key = "\(Int(arc4random_uniform(1000000000)))"   // They most likely won't have 1,000,000,000 pieces of art and the possibility of a conflict is infinitesemaly low...
             needsNewKey = false
         }
     }
