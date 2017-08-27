@@ -98,13 +98,14 @@ extension GiveArtViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let imagePicker = UIImagePickerController()
         
-        guard UIImagePickerController.isSourceTypeAvailable(.camera) else { // We don't want to allow camera roll because then the user could upload any images (that they may not have created) more easily.
-            displayError(title: "Source type not available", message: "There is no camera on this device.", additionalActions: [])
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) || UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { // One of the sourceTypes should work
+            displayError(title: "Source types not available", message: "Camera and photo album are not working", additionalActions: [])
             tableView.deselectRow(at: indexPath, animated: true)
             return
         }
         
         imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+        //UserDefaults.
         imagePicker.delegate = self
         DispatchQueue.main.async {
             self.present(imagePicker, animated: true, completion: nil)

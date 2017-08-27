@@ -9,7 +9,21 @@
 import UIKit
 import GoogleSignIn
 
+struct DefaultSettings {
+    static let source = "sourceType"
+}
+
 class SettingsViewController: UITableViewController {
+    @IBOutlet weak var sourceType: UISegmentedControl!
+    @IBAction func sourceTypeChanged(_ sender: UISegmentedControl) {
+        UserDefaults.standard.setValue(sender.selectedSegmentIndex, forKey: DefaultSettings.source)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        sourceType.selectedSegmentIndex = UserDefaults.standard.integer(forKey: DefaultSettings.source)
+    }
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             if indexPath.row == 0 { // Terms and conditions
@@ -20,7 +34,7 @@ class SettingsViewController: UITableViewController {
                 viewDetail(text: "Icons made by madebyoliver, Gregor Cresnar, and freepik from Flaticon.")
             }
         }
-        if indexPath.section == 1 && indexPath.row == 0 {
+        if indexPath.section == 1 && indexPath.row == 1 {
             print("Sign out")
             GIDSignIn.sharedInstance().signOut()
             DispatchQueue.main.async {

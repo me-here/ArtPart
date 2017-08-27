@@ -13,20 +13,24 @@ import GoogleSignIn
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-
+    
+    struct AppProperties {
+        static let FirebaseClientID = "804071343462-ucf6grb3f6q3q7c4nfnilu3lftrsvide.apps.googleusercontent.com"
+        static let orangeTabColor = UIColor(red: 242/255, green: 174/255, blue: 110/255, alpha: 1.0)
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        UIApplication.shared.delegate?.window??.tintColor = UIColor(red: 242/255, green: 174/255, blue: 110/255, alpha: 1.0)    // Tab colors
-        //UITabBar.appearance().barStyle = UIBarStyle.blackOpaque
-        //UITabBar.appearance().isOpaque = false
-        //UINavigationBar.appearance().barStyle = UIBarStyle.black
-        //UINavigationBar.appearance().backgroundColor = UIColor(red: 247/255, green: 209/255, blue: 133, alpha: 1)
-       
+        UIApplication.shared.delegate?.window??.tintColor = AppProperties.orangeTabColor
+        
         FirebaseApp.configure()
         
         // Sign in config
-        GIDSignIn.sharedInstance().clientID = "804071343462-ucf6grb3f6q3q7c4nfnilu3lftrsvide.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = AppProperties.FirebaseClientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        if UserDefaults.standard.value(forKey: DefaultSettings.source) == nil { // No sourceType yet
+            UserDefaults.standard.setValue(0, forKey: DefaultSettings.source)
+        }   // have sourcetype
         
         return true
     }
@@ -36,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
 
 extension AppDelegate: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
@@ -59,5 +62,4 @@ extension AppDelegate: GIDSignInDelegate {
             // Yay sign in successful
         }
     }
-    
 }
