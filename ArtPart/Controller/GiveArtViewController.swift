@@ -36,9 +36,11 @@ class GiveArtViewController: UIViewController {
         descriptionField.delegate = self
         priceField.delegate = self
         priceField.keyboardType = .decimalPad
+        addDoneToolbar(textField: priceField)
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        subscribeToKeyboardNotifications()
         if needsNewKey {
             key = "\(Int(arc4random_uniform(1000000000)))"   // They most likely won't have 1,000,000,000 pieces of art and the possibility of a conflict is infinitesemaly low...
             needsNewKey = false
@@ -47,6 +49,15 @@ class GiveArtViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         needsNewKey = true
+    }
+    
+    func addDoneToolbar(textField: UITextField) {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done = UIBarButtonItem(title: "Done", style: .done, target: view, action: #selector(UIView.endEditing(_:)))
+        toolbar.items = [space, done ]
+        textField.inputAccessoryView = toolbar
     }
 
     @IBAction func submitArtwork(_ sender: Any) {
@@ -90,6 +101,10 @@ class GiveArtViewController: UIViewController {
         DispatchQueue.main.async {
             self.performSegue(withIdentifier: "success", sender: self)
         }
+    }
+    
+    deinit {
+        unsubscribeFromKeyboardNotifications()
     }
     
 }
@@ -185,6 +200,31 @@ extension GiveArtViewController: UITextFieldDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
+    
+    func keyboardWillShow(_ notification: Notification) {
+        view.frame.origin.y = 0 - getKeyboardHeight(notification)
+    }
+    
+    func keyboardWillHide(_ notification: Notification) {
+        view.frame.origin.y = 0
+    }
+    
+    func getKeyboardHeight(_ notification:Notification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
+        return keyboardSize.cgRectValue.height - 44     // 44 is the toolbar height
+    }
+    
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
+    }
+
 }
