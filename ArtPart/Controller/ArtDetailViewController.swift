@@ -38,15 +38,27 @@ class ArtDetailViewController: UIViewController {
             artDescription.text = desc
         }
         
-        
         if #available(iOS 10.2, *) {
             let paymentButton = PKPaymentButton(paymentButtonType: .donate, paymentButtonStyle: .black)
-            paymentButton.addTarget(self, action: #selector(applePayTriggered), for: .touchUpInside)
-            paymentButton.frame.size = payView.frame.size
-            payView.addSubview(paymentButton)
+            setupPaymentButton(button: paymentButton)
         } else {
             // Fallback on earlier versions
+            let paymentButton = UIButton()
+            
+            paymentButton.setImage(#imageLiteral(resourceName: "ApplePay_Donate"), for: .normal)
+            setupPaymentButton(button: paymentButton)
         }
+    }
+    
+    func setupPaymentButton(button: UIButton) {
+        button.addTarget(self, action: #selector(applePayTriggered), for: .touchUpInside)
+        button.frame.size = payView.frame.size
+        
+        payView.addSubview(button)
+        
+        // resize button to fit superview
+        button.contentVerticalAlignment = UIControlContentVerticalAlignment.fill
+        button.contentHorizontalAlignment = UIControlContentHorizontalAlignment.fill
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -83,7 +95,6 @@ extension ArtDetailViewController: PKPaymentAuthorizationViewControllerDelegate 
         paymentRequest.merchantCapabilities = .capability3DS
         paymentRequest.paymentSummaryItems = paymentSummaryItems
         paymentRequest.requiredShippingAddressFields = .postalAddress
-        //paymentRequest.paymentSummaryItems = makeSummaryItems(requiresInternationalSurcharge: false)
         
         guard let vc = Optional(PKPaymentAuthorizationViewController(paymentRequest: paymentRequest)) else { // PKPaymentAuthorizationController's init can return nil and we don't want the program to crash accidentally
             print("INVALID")
