@@ -97,15 +97,9 @@ class GiveArtViewController: UIViewController {
 extension GiveArtViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let imagePicker = UIImagePickerController()
+        guard let sourceType = UIImagePickerControllerSourceType(rawValue: UserDefaults.standard.integer(forKey: DefaultSettings.source)) else {return}
         
-        guard UIImagePickerController.isSourceTypeAvailable(.camera) || UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { // One of the sourceTypes should work
-            displayError(title: "Source types not available", message: "Camera and photo album are not working", additionalActions: [])
-            tableView.deselectRow(at: indexPath, animated: true)
-            return
-        }
-        
-        imagePicker.sourceType = UIImagePickerControllerSourceType.camera
-        //UserDefaults.
+        imagePicker.sourceType = UIImagePickerController.isSourceTypeAvailable(sourceType) ? sourceType: .savedPhotosAlbum  // Set the user's choice if possible
         imagePicker.delegate = self
         DispatchQueue.main.async {
             self.present(imagePicker, animated: true, completion: nil)

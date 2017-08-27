@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Some phones don&apos;t have a camera, but we can still use your photo library for pictures of art.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>In order to give art, we need pictures of your art to display.</string>
 	<key>CFBundleDevelopmentRegion</key>
