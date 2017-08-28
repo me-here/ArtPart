@@ -14,6 +14,7 @@ class MyArtViewController: UIViewController {
     var numberOfArtWorks = 0
     var descriptions = [String]()
     var artURLs = [String]()
+    var artNumbers = [Int]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -30,6 +31,7 @@ class MyArtViewController: UIViewController {
             self.numberOfArtWorks = Int(snapshot.childrenCount)
             for value in snapshot.children {
                 guard let artValue = value as? DataSnapshot, let artNumber = artValue.value as? Int else {continue}
+                self.artNumbers.append(artNumber)
                 
                 ref.child("ArtPieces/\(artNumber)").observe(.value, with: { snapshot in
                     let artSnap = snapshot.value as? [String: AnyObject]
@@ -96,8 +98,12 @@ extension MyArtViewController: UITableViewDataSource {
 
 extension MyArtViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        let number = artNumbers[indexPath.row]
+        Database.database().reference().child("ArtPieces/\(number)").removeValue()
+        
         descriptions.remove(at: indexPath.row)
         artURLs.remove(at: indexPath.row)
+        artNumbers.remove(at: indexPath.row)
         numberOfArtWorks -= 1
         DispatchQueue.main.async {
             tableView.deleteRows(at: [indexPath], with: .automatic)
