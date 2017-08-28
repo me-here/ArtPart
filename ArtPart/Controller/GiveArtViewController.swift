@@ -182,7 +182,7 @@ extension GiveArtViewController: UIImagePickerControllerDelegate, UINavigationCo
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        guard let selectedIndexPath = self.tableView.indexPathForSelectedRow else {
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else {
             return
         }
         
@@ -207,6 +207,7 @@ extension GiveArtViewController: UITextFieldDelegate {
     }
     
     func keyboardWillShow(_ notification: Notification) {
+        guard !UIDevice.current.orientation.isPortrait else {return}    // if it's not in portrait mode
         view.frame.origin.y = 0 - getKeyboardHeight(notification)
     }
     
@@ -217,7 +218,7 @@ extension GiveArtViewController: UITextFieldDelegate {
     func getKeyboardHeight(_ notification:Notification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue
-        return keyboardSize.cgRectValue.height - 44     // 44 is the toolbar height
+        return keyboardSize.cgRectValue.height - 64     // 64 is toolbar
     }
     
     func subscribeToKeyboardNotifications() {

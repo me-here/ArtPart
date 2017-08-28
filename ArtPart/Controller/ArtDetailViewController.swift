@@ -112,7 +112,7 @@ extension ArtDetailViewController: PKPaymentAuthorizationViewControllerDelegate 
         }
         
         guard didPay else {return}  // Only send an email if they did pay (not if they clicked 'cancel')
-        let paymentCompleteVC = self.storyboard?.instantiateViewController(withIdentifier: "PaymentGivenViewController")
+        let paymentCompleteVC = storyboard?.instantiateViewController(withIdentifier: "PaymentGivenViewController")
         DispatchQueue.main.async {
             self.show(paymentCompleteVC!, sender: self)
         }

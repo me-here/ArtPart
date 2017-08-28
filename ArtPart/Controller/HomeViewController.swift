@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let hi = (self.storyboard?.instantiateViewController(withIdentifier: "hi"))!
+        let hi = (storyboard?.instantiateViewController(withIdentifier: "hi"))!
         let index = (tabBarController?.viewControllers?.count)! - 1 // 1 behind last tab
         
         // QUERY + IF
@@ -114,14 +114,14 @@ extension HomeViewController: UICollectionViewDelegate {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.numberOfArtWorks
+        return numberOfArtWorks
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtCollectionViewCell", for: indexPath) as! ArtCollectionViewCell
         
         
-        let photURL = self.artworks[indexPath.row]["pic1"]
+        let photURL = artworks[indexPath.row]["pic1"]
         guard let photoURL = photURL as? String else {
             // Analytics ...
             return cell
@@ -151,7 +151,7 @@ extension HomeViewController: UIViewControllerPreviewingDelegate {
         guard let indexPath = artCollectionView.indexPathForItem(at: location) else {return nil}
         let cellAtPath = artCollectionView.cellForItem(at: indexPath) as! ArtCollectionViewCell
         
-        let artDetail = self.storyboard?.instantiateViewController(withIdentifier: "ArtDetailViewController") as! ArtDetailViewController
+        let artDetail = storyboard?.instantiateViewController(withIdentifier: "ArtDetailViewController") as! ArtDetailViewController
         artDetail.desc = descriptions[indexPath.row]
         artDetail.image = cellAtPath.artImage.image
         

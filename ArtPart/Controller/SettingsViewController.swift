@@ -44,7 +44,7 @@ class SettingsViewController: UITableViewController {
     }
     
     func viewDetail(text: String) {
-        let detailVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
         detailVC.text = text
         DispatchQueue.main.async {
             self.show(detailVC, sender: self)
