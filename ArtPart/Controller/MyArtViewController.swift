@@ -55,6 +55,21 @@ extension MyArtViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "artCell", for: indexPath)
         
+        cell.imageView?.image = #imageLiteral(resourceName: "placeholder-image")
+        
+        guard !artURLs.isEmpty && indexPath.row < descriptions.count else {return cell}
+        
+        ArtRequests.requestWith(requestType: .get, requestURL: artURLs[indexPath.row], addValues: [:], httpBody: nil, completionHandler: { data, error in
+            guard error == nil else {
+                print("ERROR")
+                self.displayError(message: "Failure populating images.")
+                return
+            }
+            DispatchQueue.main.async {
+                cell.imageView?.image = UIImage(data: data!)
+            }
+        })
+        
         if !descriptions.isEmpty && indexPath.row < descriptions.count {
             cell.textLabel?.text = descriptions[indexPath.row]
         }
