@@ -22,6 +22,9 @@ class MyArtViewController: UIViewController {
         guard let uid = Auth.auth().currentUser?.uid else {return}
         let myArtWorks = ref.child("Users/\(uid)/Artworks")
         
+        artURLs.removeAll()
+        descriptions.removeAll()
+        numberOfArtWorks = 0
         
         myArtWorks.observe(.value, with: { snapshot in
             self.numberOfArtWorks = Int(snapshot.childrenCount)
@@ -39,13 +42,22 @@ class MyArtViewController: UIViewController {
                     self.descriptions.append(description)
                     self.artURLs.append(firstPic)
                     
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 })
                 
             }
             
         })
         
+    }
+    
+    @IBAction func editPressed(_ sender: UIBarButtonItem) {
+        let editing = tableView.isEditing ? false: true
+        DispatchQueue.main.async {
+            self.tableView.setEditing(editing, animated: true)
+        }
     }
     
 }
@@ -79,5 +91,20 @@ extension MyArtViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfArtWorks
+    }
+}
+
+extension MyArtViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        descriptions.remove(at: indexPath.row)
+        artURLs.remove(at: indexPath.row)
+        numberOfArtWorks -= 1
+        DispatchQueue.main.async {
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }
