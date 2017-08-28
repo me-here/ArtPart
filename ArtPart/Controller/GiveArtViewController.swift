@@ -40,6 +40,8 @@ class GiveArtViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         subscribeToKeyboardNotifications()
         if needsNewKey {
             key = "\(Int(arc4random_uniform(1000000000)))"   // They most likely won't have 1,000,000,000 pieces of art and the possibility of a conflict is infinitesemaly low...
@@ -48,6 +50,7 @@ class GiveArtViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         needsNewKey = true
     }
     

@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
         artCollectionView.dataSource = self
         artCollectionView.delegate = self
         
-        self.registerForPreviewing(with: self, sourceView: artCollectionView)   // Registration & Automatic unregistration
+        registerForPreviewing(with: self, sourceView: artCollectionView)   // Registration & Automatic unregistration
         setupFlowLayout(flowLayout: artFlowLayout, numberOfHorItems: 3, numberOfVertItems: 5, spacing: 3.0)
         
         ref = Database.database().reference()
